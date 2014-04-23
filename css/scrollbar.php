@@ -6,7 +6,8 @@ function scrollbar_styles() {
 
 	$options = get_option('salient');
 
-	echo '/***************** Scrollbar ******************/
+	echo '<style type="text/css">
+	/***************** Scrollbar ******************/
 
 	#ascrail2000 {
 		background-color: #555;
@@ -27,7 +28,8 @@ function scrollbar_styles() {
 		position: relative;
 		top: 220px;
 		width: 15px;
-	}';
+	}
+	</style>';
 
 
 
