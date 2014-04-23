@@ -1,14 +1,13 @@
 <?php
-
+header('Content-type: text/css');
+require_once('/wp-load.php');
+require_once('/wp-includes/post.php');
 /* ScrollBar display */
 
-function scrollbar_styles() {
 
-	ob_start();
+$options = get_option('salient');
 
-	$options = get_option('salient');
-
-	echo '<style type="text/css">
+	echo '<style id="scrollbar-styles" type="text/css">
 
 	/***************** Scrollbar ******************/
 
@@ -34,14 +33,5 @@ function scrollbar_styles() {
 	}
 
 	</style>';
-
-	$dynamic_css = ob_get_contents();
-	ob_end_clean();
-	
-	echo nectar_quick_minify($dynamic_css);
-
-}
-
-add_action('wp_head', 'scrollbar_styles');
 
 ?>

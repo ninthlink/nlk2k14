@@ -9,4 +9,8 @@ function nl2k14_js() {
 add_action( 'wp_print_scripts', 'nl2k14_js' );
 
 
-include( get_stylesheet_directory_uri() . '/css/scrollbar.php' );
+function nl2k14_styles() {	
+		 wp_register_style("scrollbar-style", get_stylesheet_directory_uri() . "/css/scrollbar.php");
+		 wp_enqueue_style('scrollbar-style'); 
+}
+add_action('wp_enqueue_scripts', 'nl2k14_styles');
