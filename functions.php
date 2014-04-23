@@ -9,4 +9,4 @@ function nl2k14_js() {
 add_action( 'wp_print_scripts', 'nl2k14_js' );
 
 
-include('css/scrollbar.php');
+include( get_stylesheet_directory_uri() . '/css/scrollbar.php' );
