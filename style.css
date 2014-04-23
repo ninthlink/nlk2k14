@@ -5,7 +5,7 @@ Description: Child Theme of Saleint WP theme, for Ninthlink.com 2014 go go go
 Author: Alex Chousmith
 Author URI: http://www.ninthlink.com
 Template: salient
-Version: 0.1.2
+Version: 0.1.3
 */
 
 @import '../salient/style.css';
@@ -14,3 +14,6 @@ Version: 0.1.2
 body.home #header-space { margin-bottom: 40px }
 .page .wpb_row { margin-bottom: 0 }
 #footer-outer #footer-widgets .col ul li:first-child.social-facebook > a { padding-top: 8px !important }
+
+/* for firefox */
+#footer-widgets .row .col img { width: 100%; }
