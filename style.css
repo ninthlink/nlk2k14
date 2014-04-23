@@ -11,5 +11,5 @@ Version: 0.1.2
 @import '../salient/style.css';
 
 /* more styles here? */
-.wpb_row { margin-bottom: 0 }
+.page .wpb_row { margin-bottom: 0 }
 #footer-outer #footer-widgets .col ul li:first-child.social-facebook > a { padding-top: 8px !important }
