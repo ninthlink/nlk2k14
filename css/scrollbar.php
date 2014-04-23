@@ -4,9 +4,12 @@
 
 function scrollbar_styles() {
 
+	ob_start();
+
 	$options = get_option('salient');
 
 	echo '<style type="text/css">
+
 	/***************** Scrollbar ******************/
 
 	#ascrail2000 {
@@ -29,9 +32,13 @@ function scrollbar_styles() {
 		top: 220px;
 		width: 15px;
 	}
+
 	</style>';
 
-
+	$dynamic_css = ob_get_contents();
+	ob_end_clean();
+	
+	echo nectar_quick_minify($dynamic_css);
 
 }
 
