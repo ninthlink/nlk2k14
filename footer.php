@@ -106,7 +106,7 @@ $cta_btn_color = (!empty($options['cta-btn-color'])) ? $options['cta-btn-color']
 					<?php if(!empty($options['disable-auto-copyright']) && $options['disable-auto-copyright'] == 1) { ?>
 						<p><?php if(!empty($options['footer-copyright-text'])) echo $options['footer-copyright-text']; ?> </p>	
 					<?php } else { ?>
-						<p>&copy; <?php echo date('Y') . ' ' . get_bloginfo('name'); ?>. <?php if(!empty($options['footer-copyright-text'])) echo $options['footer-copyright-text']; ?> </p>
+						<p>&copy; <?php echo date('Y') . ' ' . get_bloginfo('name'); ?> <?php if(!empty($options['footer-copyright-text'])) echo $options['footer-copyright-text']; ?> </p>
 					<?php } ?>
 					
 				</div><!--/span_5-->
