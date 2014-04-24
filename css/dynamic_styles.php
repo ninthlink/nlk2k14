@@ -45,7 +45,8 @@
     transition: all .6s ease;
     -webkit-transition: all .6s ease;  /* Transition for Webkit browsers */
 }
-#ascrail2000 div:hover {
+#ascrail2000 div:hover,
+#ascrail2000 div:active {
 	filter: grayscale(0%);
     -webkit-filter: grayscale(0%);
     filter: none;
