@@ -14,6 +14,9 @@
 	$extraColor2 = $options["extra-color-2"];
 	$extraColor3 = $options["extra-color-3"];
 
+	// scrollbar before/after block gap offset (in pixels)
+	$scrollerABoffset = 18;
+
 ?>
 
 /***************** Scrollbar ******************/
@@ -62,11 +65,11 @@
 }
 #ascrail2000 div:before {
     background-color: <?php echo $options["accent-color"]; ?>;
-    top: -17px;
+    top: -<?php echo $scrollerABoffset; ?>px;
 }
 #ascrail2000 div:after {
     background-color: <?php echo $options["accent-color"]; ?>;
-    bottom: -17px;
+    bottom: -<?php echo $scrollerABoffset; ?>px;
 }
 #ascrail2000 div:hover,
 #ascrail2000 div:active {
