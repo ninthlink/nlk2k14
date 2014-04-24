@@ -28,10 +28,10 @@
 	background-color: <?php echo $extraColor1 ?> !important;
 	background-clip: padding-box;
 	border: 0px;
-	/*border-bottom-left-radius: 6px;
-	border-bottom-right-radius: 6px;
-	border-top-left-radius: 6px;
-	border-top-right-radius: 6px;*/
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
 	float: right;
 	height: 112px;
 	position: relative;
