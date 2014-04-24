@@ -28,15 +28,22 @@
 	background-color: <?php echo $extraColor1 ?> !important;
 	background-clip: padding-box;
 	border: 0px;
-	border-bottom-left-radius: 6px;
+	/*border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
 	border-top-left-radius: 6px;
-	border-top-right-radius: 6px;
+	border-top-right-radius: 6px;*/
 	float: right;
 	height: 112px;
 	position: relative;
 	top: 220px;
 	width: 15px;
+
+	/* skew it */
+	-webkit-transform: skew(0deg, -20deg);
+	-moz-transform: skew(0deg, -20deg);
+	-ms-transform: skew(0deg, -20deg);
+	-o-transform: skew(0deg, -20deg);
+	transform: skew(0deg, -20deg);
 
 	/* grayscale filter, un-did on hover */
 	filter: grayscale(100%);
@@ -44,6 +51,22 @@
     filter: gray;  /* For IE 6 - 9 */
     transition: all .6s ease;
     -webkit-transition: all .6s ease;  /* Transition for Webkit browsers */
+}
+#ascrail2000 div:before,
+#ascrail2000 div:after {
+    content: ' ';
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+}
+#ascrail2000 div:before {
+    background-color: <?php echo $options["accent-color"]; ?>;
+    top: -17px;
+}
+#ascrail2000 div:after {
+    background-color: <?php echo $options["accent-color"]; ?>;
+    bottom: -17px;
 }
 #ascrail2000 div:hover,
 #ascrail2000 div:active {
