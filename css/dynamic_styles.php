@@ -37,4 +37,29 @@
 	position: relative;
 	top: 220px;
 	width: 15px;
+
+	/* grayscale filter, un-did on hover */
+	filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);  /* For Webkit browsers */
+    filter: gray;  /* For IE 6 - 9 */
+    transition: all .6s ease;
+    -webkit-transition: all .6s ease;  /* Transition for Webkit browsers */
+}
+#ascrail2000 div:hover {
+	filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    filter: none;
+}
+
+img.grayscale { 
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);  /* For Webkit browsers */
+    filter: gray;  /* For IE 6 - 9 */
+    transition: all .6s ease;
+    -webkit-transition: all .6s ease;  /* Transition for Webkit browsers */
+}
+img.grayscale:hover { 
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    filter: none;
 }
