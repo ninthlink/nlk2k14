@@ -7,6 +7,13 @@
 	header('Cache-control: must-revalidate');
 
 	$options = get_option('salient');
+
+	// from [ WP Admin -> Salient -> Accent Color ]
+	$accentColor = $options["accent-color"];
+	$extraColor1 = $options["extra-color-1"];
+	$extraColor2 = $options["extra-color-2"];
+	$extraColor3 = $options["extra-color-3"];
+
 ?>
 
 /***************** Scrollbar ******************/
@@ -18,7 +25,7 @@
 	z-index: 100000!important;
 }
 #ascrail2000 div {
-	background-color: <?php echo $options["accent-color"]; ?>;
+	background-color: <?php echo $extraColor1 ?> !important;
 	background-clip: padding-box;
 	border: 0px;
 	border-bottom-left-radius: 6px;
