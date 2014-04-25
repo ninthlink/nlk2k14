@@ -12,7 +12,9 @@
 
 <?php } else { ?>
 	<meta name="viewport" content="width=1200" />
-<?php } ?>	
+<?php } ?>
+
+<meta name="long" content="Ninthlink is an award winning, full service San Diego web design, development and Internet marketing agency offering a wide range of creative, technological, and more importantly winning ROI solutions to both small and large businesses. Our mission is your long term success and providing the greatest value for your creative investment. It is our top priority to create a strategy that is highly effective for your organization.  Our results are, in every sense, your results. Whether your business is a new start-up or a large, established company, our experienced staff will work with you to create an affordable, professional web solution that meets all of your needs.">
 
 <!--Shortcut icon-->
 <?php if(!empty($options['favicon'])) { ?>
@@ -153,6 +155,9 @@ if($using_secondary == 'header_with_secondary') { ?>
 								echo '<li><a href="">No menu assigned!</a></li>';
 							}
 							?>
+							<?php  if(!empty($options['use-facebook-icon']) && $options['use-facebook-icon'] == 1) { ?> <li><a target="_blank" href="<?php echo $options['facebook-url']; ?>"><i class="icon-facebook"></i> </a></li> <?php } ?>
+							<?php  if(!empty($options['use-twitter-icon']) && $options['use-twitter-icon'] == 1) { ?> <li><a target="_blank" href="<?php echo $options['twitter-url']; ?>"><i class="icon-twitter"></i> </a></li> <?php } ?>
+							<?php  if(!empty($options['use-instagram-icon']) && $options['use-instagram-icon'] == 1) { ?> <li><a target="_blank" href="<?php echo $options['instagram-url']; ?>"><i class="icon-instagram"></i></a></li> <?php } ?>
 						</ul>
 					</nav>
 					
