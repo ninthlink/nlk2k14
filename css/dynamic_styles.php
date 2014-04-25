@@ -115,3 +115,13 @@ img.grayscale:hover {
     -webkit-filter: grayscale(0%);
     filter: none;
 }
+
+
+
+/************ FIXES ****************/
+
+/* lists */
+.main-content .nectar-fancy-ul ul {
+	margin-left: -8px;
+	margin-bottom: 30px;
+}
