@@ -15,16 +15,30 @@ function nl2k14_styles() {
 }
 add_action('wp_enqueue_scripts', 'nl2k14_styles');
 
-function image_by_scan( $args = array() ) {
+
+// get src of first image in post or featured image if any
+function post_image_src() {
+	
 	if ( !$post_id )
+
 		global $post;
+
 	preg_match_all( '|<img.*?src=[\'"](.*?)[\'"].*?>|i', $post->post_content, $matches );
-	if ( isset( $matches ) ) $image = $matches[1][0];
+
+	if ( isset( $matches ) )
+
+		$image = $matches[1][0];
+
 	if ( $matches[1][0] ) {
-		//return array( 'image' => $image );
-		print_r($matches);
+
+		return $matches[1][0];
+
 	}
+
 	else {
+
 		return false;
+
 	}
+
 }

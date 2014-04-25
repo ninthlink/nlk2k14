@@ -21,27 +21,21 @@ endwhile; endif;
 
 	<?php if( is_single() ) {
 
-		if ( has_post_thumbnail() ) {
+		$src = post_image_src()
 
-			$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
+		if ( $src ) {
 
-			echo '<span class="post-featured-img-full-width" style="background-image:url(\'' . $large_image_url[0] . '\');"></span>';
+			echo '<span class="post-featured-img-full-width" style="background-image:url(\'' . $src . '\');"></span>';
 
+		}
 
+		else {
+
+			echo '<span class="post-no-featured-img-full-width" style=""></span>';
 
 		}
 
 	} ?>
-
-	<?php
-
-		echo '<pre style="display:none;">';
-
-		image_by_scan();
-
-		echo '</pre>';
-
-	?>
 
 	<?php endwhile; endif; ?>
 	
