@@ -14,3 +14,17 @@ function nl2k14_styles() {
 		 wp_enqueue_style('dynamic-styles'); 
 }
 add_action('wp_enqueue_scripts', 'nl2k14_styles');
+
+function image_by_scan( $args = array() ) {
+	if ( !$post_id )
+		global $post;
+	preg_match_all( '|<img.*?src=[\'"](.*?)[\'"].*?>|i', $post->post_content, $matches );
+	if ( isset( $matches ) ) $image = $matches[1][0];
+	if ( $matches[1][0] ) {
+		//return array( 'image' => $image );
+		print_r($matches);
+	}
+	else {
+		return false;
+	}
+}

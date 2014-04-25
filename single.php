@@ -27,6 +27,12 @@ endwhile; endif;
 
 			echo '<span class="post-featured-img-full-width" style="background-image:url(\'' . $large_image_url[0] . '\');"></span>';
 
+			echo '<pre style="display:none;">';
+
+			image_by_scan();
+			
+			echo '</pre>';
+
 		}
 
 	} ?>
