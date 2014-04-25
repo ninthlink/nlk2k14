@@ -21,7 +21,7 @@ endwhile; endif;
 
 	<?php if( is_single() ) {
 
-		$src = post_image_src()
+		$src = post_image_src();
 
 		if ( $src ) {
 
