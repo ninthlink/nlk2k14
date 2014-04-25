@@ -125,3 +125,12 @@ img.grayscale:hover {
 	margin-left: -8px;
 	margin-bottom: 30px;
 }
+
+/* post-featured-img-full-width */
+span.post-featured-img-full-width {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	width: 100%;
+	height: 400px;
+}

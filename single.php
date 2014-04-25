@@ -21,11 +21,11 @@ endwhile; endif;
 
 	<?php if( is_single() ) {
 
-		if ( has_post_thumbnail()) {
+		if ( has_post_thumbnail() ) {
 
 			$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
 
-			echo '<span class="post-featured-img-full-width" style="background-image:url(\'' . $large_image_url[0] . '\'); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;"></span>';
+			echo '<span class="post-featured-img-full-width" style="background-image:url(\'' . $large_image_url[0] . '\');"></span>';
 
 		}
 
