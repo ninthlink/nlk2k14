@@ -127,12 +127,11 @@ img.grayscale:hover {
 }
 
 /* post-featured-img-full-width */
-span.post-featured-img-full-width {
+div.post-featured-img-full-width {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	display: block;
-	height: 400px;
 	margin-top: -38px;
 	width: 100%;
 }

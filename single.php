@@ -25,13 +25,21 @@ endwhile; endif;
 
 		if ( $src ) {
 
-			echo '<span class="post-featured-img-full-width" style="background-image:url(\'' . $src . '\');"></span>';
+			echo '<div class="post-featured-img-full-width" style="background-image:url(\'' . $src . '\');">';
+
+			echo '<h1 class="entry-title">' . the_title() . '</h1>';
+
+			echo '</div>';
 
 		}
 
 		else {
 
-			echo '<span class="post-no-featured-img-full-width" style=""></span>';
+			echo '<div class="post-no-featured-img-full-width" style="">';
+
+			echo '<h1 class="entry-title">' . the_title() . '</h1>';
+
+			echo '</div>';
 
 		}
 
@@ -49,7 +57,6 @@ endwhile; endif;
 
 					<div class="row heading-title">
 						<div class="col span_12 section-title blog-title">
-							<h1 class="entry-title"><?php the_title(); ?></h1>
 							
 							<div id="single-below-header">
 								<span class="meta-author vcard author"><span class="fn"><?php echo __('By', NECTAR_THEME_NAME); ?> <?php the_author_posts_link(); ?></span></span> 
