@@ -81,7 +81,7 @@
 /******************** Nav Icons ********************/
 nav [class^="icon-"], nav [class*=" icon-"] {
 	background-color: transparent;
-	color: #888;
+	color: inherit;
 	display: inline-block;
 	font-size: <?php echo ($options['navigation_font_size'] != '-') ? $options['navigation_font_size'] : '15px'; ?>;
 	height: auto;
