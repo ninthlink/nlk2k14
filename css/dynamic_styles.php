@@ -78,6 +78,31 @@
     filter: none;
 }
 
+/******************** Nav Icons ********************/
+nav [class^="icon-"], nav [class*=" icon-"] {
+	background-color: transparent;
+	color: #888;
+	display: inline-block;
+	font-size: <?php echo ($options['navigation_font_size'] != '-') ? $options['navigation_font_size'] : '15px'; ?>;
+	height: auto;
+	line-height: inherit;
+	max-width: 100%;
+	position: relative;
+	text-align: center;
+	vertical-align: top;
+	width: inherit;
+	top: 0px;
+	word-spacing: 0px;
+}
+nav a:hover > [class^="icon-"], nav a:hover > [class*=" icon-"] {
+	color: <?php echo $options["accent-color"]; ?>;
+}
+
+
+
+
+/***************** Image Gray-scaler ***********************/
+
 img.grayscale { 
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);  /* For Webkit browsers */
