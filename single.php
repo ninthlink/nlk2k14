@@ -19,31 +19,29 @@ endwhile; endif;
 
 	<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 
-	<?php //if( is_single() ) {
+	<?php if( is_single() ) {
 
-		$src = post_image_src();
-
-		if ( $src ) {
-
-			echo '<div class="post-featured-img-full-width" style="background-image:url(\'' . $src . '\');">';
-
-			echo '<div class="container"><h1 class="entry-title">' . get_the_title() . '</h1></div>';
-
-			echo '</div>';
-
+		if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+			$src = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 		}
 
 		else {
-
-			echo '<div class="post-no-featured-img-full-width" style="">';
-
-			echo '<div class-"container"><h1 class="entry-title">' . get_the_title() . '</h1></div>';
-
-			echo '</div>';
-
+			$src = post_image_src();
 		}
 
-	//} ?>
+		if ( $src ) {
+			echo '<div class="post-featured-img-full-width" style="background-image:url(\'' . $src . '\');"><div class="grad"></div>';
+			echo '<div class="container"><h1 class="entry-title"><span>' . get_the_title() . '</span></h1></div>';
+			echo '</div>';
+		}
+
+		else {
+			echo '<div class="post-no-featured-img-full-width" style="">';
+			echo '<div class-"container"><h1 class="entry-title"><span>' . get_the_title() . '</span></h1></div>';
+			echo '</div>';
+		}
+
+	} ?>
 
 	<?php endwhile; endif; ?>
 	

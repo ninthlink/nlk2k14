@@ -126,12 +126,35 @@ img.grayscale:hover {
 	margin-bottom: 30px;
 }
 
-/* post-featured-img-full-width */
+
+
+/*************** Blog Full Width Headers / Images *************/
+
 div.post-featured-img-full-width {
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: 50% 50%;
+	background-position: 50% 40%;
 	display: block;
 	margin-top: -38px;
 	width: 100%;
+}
+
+div.post-featured-img-full-width .grad {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	-webkit-box-shadow: inset 0px 0px 300px 1px rgba(0, 0, 0, .8);
+	-moz-box-shadow:    inset 0px 0px 300px 1px rgba(0, 0, 0, .8);
+	box-shadow:         inset 0px 0px 300px 1px rgba(0, 0, 0, .8);
+}
+div.post-featured-img-full-width h1 {
+	color: #fff;
+	font-size: 5em;
+	font-weight: 400;
+	line-height: 130%;
+	padding: 2em 0 .75em;
+}
+div.post-featured-img-full-width h1 > span {
+	background-color: #000;
+	background-color: rgba(0, 0, 0, .5);
 }
