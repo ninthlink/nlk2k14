@@ -15,11 +15,11 @@ endwhile; endif;
 
 <div class="container-wrap">
 
-	<?php /* Full Width Area :: full width  */ ?>
+	<?php /* Full Width Area :: full width header bar image */ ?>
 
 	<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 
-	<?php if( is_single() ) {
+	<?php //if( is_single() ) {
 
 		$src = post_image_src();
 
@@ -43,7 +43,7 @@ endwhile; endif;
 
 		}
 
-	} ?>
+	//} ?>
 
 	<?php endwhile; endif; ?>
 	
