@@ -133,8 +133,9 @@ img.grayscale:hover {
 div.post-featured-img-full-width {
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: 50% 40%;
+	background-position: 50% 15%;
 	display: block;
+	margin-bottom: 30px;
 	margin-top: -38px;
 	width: 100%;
 }
@@ -157,4 +158,8 @@ div.post-featured-img-full-width h1 {
 div.post-featured-img-full-width h1 > span {
 	background-color: #000;
 	background-color: rgba(0, 0, 0, .5);
+}
+
+div.container-wrap.std-blog-fullwidth article .container.main-content img {
+	display: none;
 }

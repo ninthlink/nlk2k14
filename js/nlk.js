@@ -10,7 +10,9 @@ jQuery(function($) {
 
 
 	if ( $('div.post-featured-img-full-width').size() > 0 ) {
-		var h = $('div.post-featured-img-full-width').height();
-		$('div.post-featured-img-full-width .grad').height(h);
+		$('div.post-featured-img-full-width').each( function(){
+			var h = $(this).height();
+			$(this).find('.grad').height(h);
+		});
 	}
 });
