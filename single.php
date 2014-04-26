@@ -27,7 +27,7 @@ endwhile; endif;
 
 			echo '<div class="post-featured-img-full-width" style="background-image:url(\'' . $src . '\');">';
 
-			echo '<div class="container"><h1 class="entry-title">' . the_title() . '</h1></div>';
+			echo '<div class="container"><h1 class="entry-title">' . get_the_title() . '</h1></div>';
 
 			echo '</div>';
 
@@ -37,7 +37,7 @@ endwhile; endif;
 
 			echo '<div class="post-no-featured-img-full-width" style="">';
 
-			echo '<div class-"container"><h1 class="entry-title">' . the_title() . '</h1></div>';
+			echo '<div class-"container"><h1 class="entry-title">' . get_the_title() . '</h1></div>';
 
 			echo '</div>';
 
