@@ -130,17 +130,19 @@ img.grayscale:hover {
 
 /*************** Blog Full Width Headers / Images *************/
 
+div.container-wrap.std-blog-fullwidth {
+	margin-top: -93px;
+}
 div.post-featured-img-full-width {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 50% 15%;
 	display: block;
 	margin-bottom: 30px;
-	margin-top: -38px;
 	width: 100%;
 
-	-webkit-filter: contrast(200%) saturate(200%);
-	filter: contrast(200%) saturate(200%);
+	-webkit-filter: contrast(120%) saturate(125%);
+	filter: contrast(120%) saturate(125%);
 }
 
 div.post-featured-img-full-width h1 {
@@ -148,7 +150,7 @@ div.post-featured-img-full-width h1 {
 	font-size: 5em;
 	font-weight: 400;
 	line-height: 130%;
-	padding: 2em 0 .75em;
+	padding: .75em 0 2em;
 }
 div.post-featured-img-full-width h1 > span {
 	background-color: #000;
@@ -157,4 +159,7 @@ div.post-featured-img-full-width h1 > span {
 
 div.container-wrap.std-blog-fullwidth article .container.main-content img {
 	display: none;
+}
+div.container-wrap.std-blog-fullwidth article .container .post-content .content-inner {
+	border-bottom: none;
 }

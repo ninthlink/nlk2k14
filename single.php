@@ -4,6 +4,10 @@
 
 $options = get_option('salient');
 
+$blog_type = $options['blog_type'];
+
+if($blog_type == null) $blog_type = 'std-blog-fullwidth';
+
 $bg = get_post_meta($post->ID, '_nectar_header_bg', true);
 $bg_color = get_post_meta($post->ID, '_nectar_header_bg_color', true);
 
@@ -19,30 +23,34 @@ endwhile; endif;
 
 	<?php /* Full Width Area :: full width header bar image */ ?>
 
-	<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+	<?php if ( $blog_type == 'std-blog-fullwidth' ) { ?>
 
-	<?php if( is_single() ) {
+		<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 
-		if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-			$src = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-		}
+		<?php if( is_single() ) {
 
-		else {
-			$src = post_image_src();
-		}
+			if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+				$src = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+			}
 
-		if ( $src ) {
-			echo '<div class="post-featured-img-full-width" style="background-image:url(\'' . $src . '\');">';
-		}
-		else {
-			echo '<div class="post-no-featured-img-full-width" style="background-color:' . $options["accent-color"] . '">';
-		}
-		echo '<div class-"container"><h1 class="entry-title"><span>' . get_the_title() . '</span></h1></div>';
-		echo '</div>';
+			else {
+				$src = post_image_src();
+			}
 
-	} ?>
+			if ( $src ) {
+				echo '<div class="post-featured-img-full-width" style="background-image:url(\'' . $src . '\');">';
+			}
+			else {
+				echo '<div class="post-no-featured-img-full-width" style="background-color:' . $options["accent-color"] . '">';
+			}
+			echo '<div class="container"><h1 class="entry-title"><span>' . get_the_title() . '</span></h1></div>';
+			echo '</div>';
+
+		} ?>
 
 	<?php endwhile; endif; ?>
+
+	<?php } ?>
 	
 	<div class="container main-content">
 		
@@ -54,6 +62,7 @@ endwhile; endif;
 
 					<div class="row heading-title">
 						<div class="col span_12 section-title blog-title">
+							<?php if ( $blog_type !== 'std-blog-fullwidth' ) { ?><h1 class="entry-title"><?php the_title(); ?></h1><?php } ?>
 							
 							<div id="single-below-header">
 								<span class="meta-author vcard author"><span class="fn"><?php echo __('By', NECTAR_THEME_NAME); ?> <?php the_author_posts_link(); ?></span></span> 
