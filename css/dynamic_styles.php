@@ -125,6 +125,22 @@ img.grayscale:hover {
 	margin-left: -8px;
 	margin-bottom: 30px;
 }
+/* articles w/ floated content */
+div.std-blog-fullwidth article:after {
+	content: ' ';
+	display: block;
+	clear: both;
+}
+div.std-blog-fullwidth article.post {
+border-bottom: 1px solid #DDDDDD;
+padding-bottom: 50px;
+margin-bottom: 50px;
+}
+div.std-blog-fullwidth article.post .content-inner {
+	border-bottom: none;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
 
 
 
