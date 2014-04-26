@@ -2,6 +2,8 @@
 
 <?php 
 
+$options = get_option('salient');
+
 $bg = get_post_meta($post->ID, '_nectar_header_bg', true);
 $bg_color = get_post_meta($post->ID, '_nectar_header_bg_color', true);
 
@@ -30,16 +32,13 @@ endwhile; endif;
 		}
 
 		if ( $src ) {
-			echo '<div class="post-featured-img-full-width" style="background-image:url(\'' . $src . '\');"><div class="grad"></div>';
-			echo '<div class="container"><h1 class="entry-title"><span>' . get_the_title() . '</span></h1></div>';
-			echo '</div>';
+			echo '<div class="post-featured-img-full-width" style="background-image:url(\'' . $src . '\');">';
 		}
-
 		else {
-			echo '<div class="post-no-featured-img-full-width" style="">';
-			echo '<div class-"container"><h1 class="entry-title"><span>' . get_the_title() . '</span></h1></div>';
-			echo '</div>';
+			echo '<div class="post-no-featured-img-full-width" style="background-color:' . $options["accent-color"] . '">';
 		}
+		echo '<div class-"container"><h1 class="entry-title"><span>' . get_the_title() . '</span></h1></div>';
+		echo '</div>';
 
 	} ?>
 

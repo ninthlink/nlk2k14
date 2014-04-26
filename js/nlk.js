@@ -8,11 +8,4 @@ jQuery(function($) {
 		});
 	}
 
-
-	if ( $('div.post-featured-img-full-width').size() > 0 ) {
-		$('div.post-featured-img-full-width').each( function(){
-			var h = $(this).height();
-			$(this).find('.grad').height(h);
-		});
-	}
 });

@@ -138,15 +138,11 @@ div.post-featured-img-full-width {
 	margin-bottom: 30px;
 	margin-top: -38px;
 	width: 100%;
+
+	-webkit-filter: contrast(200%) saturate(200%);
+	filter: contrast(200%) saturate(200%);
 }
 
-div.post-featured-img-full-width .grad {
-	position: absolute;
-	width: 100%;
-	-webkit-box-shadow: inset 0px 0px 300px 1px rgba(0, 0, 0, .8);
-	-moz-box-shadow:    inset 0px 0px 300px 1px rgba(0, 0, 0, .8);
-	box-shadow:         inset 0px 0px 300px 1px rgba(0, 0, 0, .8);
-}
 div.post-featured-img-full-width h1 {
 	color: #fff;
 	font-size: 5em;

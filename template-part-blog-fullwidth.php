@@ -25,7 +25,6 @@ $options = get_option('salient');
 		echo '<div class="post-featured-img-full-width" style="background-color:' . $options["accent-color"] . ';">';
 	}
 
-	echo '<div class="grad"></div>';
 	echo '<div class="container"><h1 class="entry-title"><span>' . get_the_title() . '</span></h1></div>';
 	echo '</div>';
 
