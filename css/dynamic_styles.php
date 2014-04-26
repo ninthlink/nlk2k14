@@ -143,6 +143,9 @@ div.post-featured-img-full-width {
 
 	-webkit-filter: contrast(120%) saturate(125%);
 	filter: contrast(120%) saturate(125%);
+
+	-webkit-box-shadow: inset 0 0 200px 0px rgba(0, 0, 0, .55);
+	box-shadow: inset 0 0 200px 0px rgba(0, 0, 0, .55);
 }
 
 div.post-featured-img-full-width h1 {
@@ -151,6 +154,9 @@ div.post-featured-img-full-width h1 {
 	font-weight: 400;
 	line-height: 130%;
 	padding: .75em 0 2em;
+}
+div.container-wrap.std-blog-fullwidth.single-entry div.post-featured-img-full-width h1 {
+	padding: .5em 0;
 }
 div.post-featured-img-full-width h1 > span {
 	background-color: #000;
