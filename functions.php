@@ -16,29 +16,17 @@ function nl2k14_styles() {
 add_action('wp_enqueue_scripts', 'nl2k14_styles');
 
 
-// get src of first image in post or featured image if any
 function post_image_src() {
-	
+	// get src of first image in post or featured image if any
 	if ( !$post_id )
-
 		global $post;
-
 	preg_match_all( '|<img.*?src=[\'"](.*?)[\'"].*?>|i', $post->post_content, $matches );
-
 	if ( isset( $matches ) )
-
 		$image = $matches[1][0];
-
 	if ( $matches[1][0] ) {
-
 		return $matches[1][0];
-
 	}
-
 	else {
-
 		return false;
-
 	}
-
 }

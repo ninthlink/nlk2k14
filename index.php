@@ -22,7 +22,7 @@ get_header();
 
 		if(have_posts()) : while(have_posts()) : the_post();
 
-			get_template_part( 'template-part-blog-fullwidth', get_post_format() );
+			get_template_part( 'loop', get_post_format() );
 
 		endwhile; endif; ?>
 

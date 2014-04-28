@@ -21,100 +21,100 @@
 
 /***************** Scrollbar ******************/
 
-#ascrail2000 {
-	background-color: #555;
-	width: 16px!important;
-	z-index: 100000;
-	z-index: 100000!important;
-}
-#ascrail2000 div {
-	background-color: <?php echo $extraColor1 ?> !important;
-	background-clip: padding-box;
-	border: 0px;
-	border-bottom-left-radius: 0 !important;
-	border-bottom-right-radius: 0 !important;
-	border-top-left-radius: 0 !important;
-	border-top-right-radius: 0 !important;
-	float: right;
-	height: 112px;
-	position: relative;
-	top: 220px;
-	width: 15px;
+	#ascrail2000 {
+		background-color: #555;
+		width: 16px!important;
+		z-index: 100000;
+		z-index: 100000!important;
+	}
+	#ascrail2000 div {
+		background-color: <?php echo $extraColor1 ?> !important;
+		background-clip: padding-box;
+		border: 0px;
+		border-bottom-left-radius: 0 !important;
+		border-bottom-right-radius: 0 !important;
+		border-top-left-radius: 0 !important;
+		border-top-right-radius: 0 !important;
+		float: right;
+		height: 112px;
+		position: relative;
+		top: 220px;
+		width: 15px;
 
-	/* skew it */
-	-webkit-transform: skew(0deg, -20deg);
-	-moz-transform: skew(0deg, -20deg);
-	-ms-transform: skew(0deg, -20deg);
-	-o-transform: skew(0deg, -20deg);
-	transform: skew(0deg, -20deg);
+		/* skew it */
+		-webkit-transform: skew(0deg, -20deg);
+		-moz-transform: skew(0deg, -20deg);
+		-ms-transform: skew(0deg, -20deg);
+		-o-transform: skew(0deg, -20deg);
+		transform: skew(0deg, -20deg);
 
-	/* grayscale filter, un-did on hover */
-	filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);  /* For Webkit browsers */
-    filter: gray;  /* For IE 6 - 9 */
-    transition: all .6s ease;
-    -webkit-transition: all .6s ease;  /* Transition for Webkit browsers */
-}
-#ascrail2000 div:before,
-#ascrail2000 div:after {
-    content: ' ';
-    display: block;
-    width: 15px;
-    height: 15px;
-    position: absolute;
-}
-#ascrail2000 div:before {
-    background-color: <?php echo $options["accent-color"]; ?>;
-    top: -<?php echo $scrollerABoffset; ?>px;
-}
-#ascrail2000 div:after {
-    background-color: <?php echo $options["accent-color"]; ?>;
-    bottom: -<?php echo $scrollerABoffset; ?>px;
-}
-#ascrail2000 div:hover,
-#ascrail2000 div:active {
-	filter: grayscale(0%);
-    -webkit-filter: grayscale(0%);
-    filter: none;
-}
+		/* grayscale filter, un-did on hover */
+		filter: grayscale(100%);
+	    -webkit-filter: grayscale(100%);  /* For Webkit browsers */
+	    filter: gray;  /* For IE 6 - 9 */
+	    transition: all .6s ease;
+	    -webkit-transition: all .6s ease;  /* Transition for Webkit browsers */
+	}
+	#ascrail2000 div:before,
+	#ascrail2000 div:after {
+	    content: ' ';
+	    display: block;
+	    width: 15px;
+	    height: 15px;
+	    position: absolute;
+	}
+	#ascrail2000 div:before {
+	    background-color: <?php echo $options["accent-color"]; ?>;
+	    top: -<?php echo $scrollerABoffset; ?>px;
+	}
+	#ascrail2000 div:after {
+	    background-color: <?php echo $options["accent-color"]; ?>;
+	    bottom: -<?php echo $scrollerABoffset; ?>px;
+	}
+	#ascrail2000 div:hover,
+	#ascrail2000 div:active {
+		filter: grayscale(0%);
+	    -webkit-filter: grayscale(0%);
+	    filter: none;
+	}
 
 /******************** Nav Icons ********************/
-nav [class^="icon-"], nav [class*=" icon-"] {
-	background-color: transparent;
-	color: inherit;
-	display: inline-block;
-	font-size: <?php echo ($options['navigation_font_size'] != '-') ? $options['navigation_font_size'] : '15px'; ?>;
-	height: auto;
-	line-height: inherit;
-	max-width: 100%;
-	position: relative;
-	text-align: center;
-	vertical-align: top;
-	width: inherit;
-	top: 0px;
-	word-spacing: 0px;
-}
-nav a:hover > [class^="icon-"], nav a:hover > [class*=" icon-"] {
-	color: <?php echo $options["accent-color"]; ?>;
-}
+	nav [class^="icon-"], nav [class*=" icon-"] {
+		background-color: transparent;
+		color: inherit;
+		display: inline-block;
+		font-size: <?php echo ($options['navigation_font_size'] != '-') ? $options['navigation_font_size'] : '15px'; ?>;
+		height: auto;
+		line-height: inherit;
+		max-width: 100%;
+		position: relative;
+		text-align: center;
+		vertical-align: top;
+		width: inherit;
+		top: 0px;
+		word-spacing: 0px;
+	}
+	nav a:hover > [class^="icon-"], nav a:hover > [class*=" icon-"] {
+		color: <?php echo $options["accent-color"]; ?>;
+	}
 
 
 
 
 /***************** Image Gray-scaler ***********************/
 
-img.grayscale { 
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);  /* For Webkit browsers */
-    filter: gray;  /* For IE 6 - 9 */
-    transition: all .6s ease;
-    -webkit-transition: all .6s ease;  /* Transition for Webkit browsers */
-}
-img.grayscale:hover { 
-    filter: grayscale(0%);
-    -webkit-filter: grayscale(0%);
-    filter: none;
-}
+	img.grayscale { 
+	    filter: grayscale(100%);
+	    -webkit-filter: grayscale(100%);  /* For Webkit browsers */
+	    filter: gray;  /* For IE 6 - 9 */
+	    transition: all .6s ease;
+	    -webkit-transition: all .6s ease;  /* Transition for Webkit browsers */
+	}
+	img.grayscale:hover { 
+	    filter: grayscale(0%);
+	    -webkit-filter: grayscale(0%);
+	    filter: none;
+	}
 
 
 
@@ -132,9 +132,12 @@ div.std-blog-fullwidth article:after {
 	clear: both;
 }
 div.std-blog-fullwidth article.post {
-border-bottom: 1px solid #DDDDDD;
-padding-bottom: 50px;
-margin-bottom: 50px;
+	margin-bottom: 100px;
+}
+div.std-blog-fullwidth.single article.post {
+	border-bottom: 1px solid #DDDDDD;
+	padding-bottom: 50px;
+	margin-bottom: 50px;
 }
 div.std-blog-fullwidth article.post .content-inner {
 	border-bottom: none;
@@ -146,42 +149,124 @@ div.std-blog-fullwidth article.post .content-inner {
 
 /*************** Blog Full Width Headers / Images *************/
 
-div.container-wrap.std-blog-fullwidth {
-	margin-top: -93px;
-}
-div.post-featured-img-full-width {
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 50% 15%;
-	display: block;
-	margin-bottom: 30px;
-	width: 100%;
+/* three-color bar above blog header images */
+	.article-color-bar {
+		background-color: <?php echo $options['extra-color-1']; ?>;
+		height: 6px;
+		position: relative;
+		width: 100%;
+	}
+	.article-color-bar div {
+		display: block;
+		height: 6px;
+		margin: 0 auto;
+		padding: 0;
+		position: absolute;
+		width: 33%;
+	}
+	.article-color-bar div:first-child {
+		background-color: <?php echo $options['accent-color']; ?>;
+		left: 0;
+	}
+	.article-color-bar div:last-child {
+		background-color: <?php echo $options['extra-color-2']; ?>;
+		right: 0;
+	}
 
-	-webkit-filter: contrast(120%) saturate(125%);
-	filter: contrast(120%) saturate(125%);
+/* fix for top header/menu bar */
+	div.container-wrap.std-blog-fullwidth {
+		margin-top: -93px;
+	}
 
-	-webkit-box-shadow: inset 0 0 200px 0px rgba(0, 0, 0, .55);
-	box-shadow: inset 0 0 200px 0px rgba(0, 0, 0, .55);
-}
+/* blog full-width header images */
+	div.post-featured-img-full-width {
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 27.5%;
+		display: block;
+		min-height: 480px;
+		width: 100%;
 
-div.post-featured-img-full-width h1 {
-	color: #fff;
-	font-size: 5em;
-	font-weight: 400;
-	line-height: 130%;
-	padding: .75em 0 2em;
-}
+		-webkit-filter: contrast(120%) saturate(125%);
+		filter: contrast(120%) saturate(125%);
+
+		-webkit-box-shadow: inset 0 0 200px 0px rgba(0, 0, 0, .55);
+		box-shadow: inset 0 0 200px 0px rgba(0, 0, 0, .55);
+	}
+	div.post-featured-img-full-width.no-img {
+		min-height: 120px;
+		height: 180px;
+	}
+
+/* post titles */
+	div.blog-header-post-title h1,
+	div.blog-header-post-title h2 {
+		background-color: #f8f8f8;
+		background-color: rgb(248, 248, 248);
+		background-color: rgba(248, 248, 248, 1);
+		color: <?php echo $options['extra-color-3']; ?>;
+		font-size: 3em;
+		font-weight: 400;
+		line-height: 130%;
+		margin-top: -90px;
+		padding: .75em 0;
+		text-align: center;
+		border-top: 1px solid <?php echo $options['extra-color-3']; ?>;
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(<?php echo $options['extra-color-3']; ?>), to(transparent));
+		background-image: -webkit-linear-gradient(<?php echo $options['extra-color-3']; ?>, transparent);
+		background-image:
+			-moz-linear-gradient(<?php echo $options['extra-color-3']; ?>, transparent),
+			-moz-linear-gradient(<?php echo $options['extra-color-3']; ?>, transparent);
+		background-image:
+			-o-linear-gradient(<?php echo $options['extra-color-3']; ?>, transparent),
+			-o-linear-gradient(<?php echo $options['extra-color-3']; ?>, transparent);
+		background-image: 
+			linear-gradient(<?php echo $options['extra-color-3']; ?>, transparent),
+			linear-gradient(<?php echo $options['extra-color-3']; ?>, transparent);
+		-moz-background-size: 1px 100%;
+		background-size: 1px 100%;
+		background-position: 0 0, 100% 0;
+		background-repeat: no-repeat;
+		-webkit-transition: color .35s;
+		-moz-transition: color .35s;
+		-ms-transition: color .35s;
+		-o-transition: color .35s;
+		transition: color .35s;
+	}
+	div.blog-header-post-title h1:hover,
+	div.blog-header-post-title h2:hover {
+		color: <?php echo $options['accent-color']; ?>;
+	}
+
+
+
+
 div.container-wrap.std-blog-fullwidth.single-entry div.post-featured-img-full-width h1 {
 	padding: .5em 0;
-}
-div.post-featured-img-full-width h1 > span {
-	background-color: #000;
-	background-color: rgba(0, 0, 0, .5);
 }
 
 div.container-wrap.std-blog-fullwidth article .container.main-content img {
 	display: none;
 }
+
+div.container-wrap.std-blog-fullwidth article .container .post-content {
+	padding: 0 120px;
+}
 div.container-wrap.std-blog-fullwidth article .container .post-content .content-inner {
 	border-bottom: none;
+}
+
+div.container-wrap.std-blog-fullwidth article .post-header {
+	text-align: center;
+}
+
+div.container-wrap.std-blog-fullwidth article.post .post-meta {
+	display: block;
+	margin-bottom: inherit;
+	border-right: none;
+}
+div.container-wrap.std-blog-fullwidth article.post .post-meta {
+	position: relative;
+	left: inherit;
+	top: inherit;
 }
