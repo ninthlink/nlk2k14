@@ -21,37 +21,12 @@ endwhile; endif;
 
 <div class="container-wrap <?php if ( $blog_type == 'std-blog-fullwidth' ) echo 'std-blog-fullwidth'; ?> <?php if ( is_single() ) echo 'single-entry'; ?>">
 
-	<?php /* Full Width Area :: full width header bar image */ ?>
+	<div class="article-color-bar"><div></div><div></div><div></div></div>
 
-	<?php if ( $blog_type == 'std-blog-fullwidth' ) { ?>
+	<div class="container blog-header-post-title">
+		<h1 class="entry-title"><span><?php echo get_the_title(); ?></span></h1>
+	</div>
 
-		<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
-
-		<?php if( is_single() ) {
-
-			if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-				$src = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-			}
-
-			else {
-				$src = post_image_src();
-			}
-
-			if ( $src ) {
-				echo '<div class="post-featured-img-full-width" style="background-image:url(\'' . $src . '\');">';
-			}
-			else {
-				echo '<div class="post-no-featured-img-full-width" style="background-color:' . $options["accent-color"] . '">';
-			}
-			echo '<div class="container"><h1 class="entry-title"><span>' . get_the_title() . '</span></h1></div>';
-			echo '</div>';
-
-		} ?>
-
-	<?php endwhile; endif; ?>
-
-	<?php } ?>
-	
 	<div class="container main-content">
 		
 		<?php if(get_post_format() != 'quote' && get_post_format() != 'status' && get_post_format() != 'aside') { ?>

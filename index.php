@@ -12,7 +12,7 @@ get_header();
 
 <?php nectar_page_header(get_option('page_for_posts')); ?>
 
-<div class="container-wrap <?php if ( $blog_type == 'std-blog-fullwidth' ) echo 'std-blog-fullwidth'; ?>  <?php if ( is_single() ) echo 'single-entry'; ?>">
+<div class="container-wrap <?php if ( $blog_type == 'std-blog-fullwidth' ) echo 'std-blog-fullwidth'; ?>  <?php echo ( is_single() ? 'single-entry' : 'blog-posts' ); ?>">
 
 	<?php
 

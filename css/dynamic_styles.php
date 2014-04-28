@@ -145,13 +145,18 @@ div.std-blog-fullwidth article.post .content-inner {
 	margin-bottom: 0px;
 }
 
+.flex-gallery ul.flex-direction-nav {
+	left: 50%;
+	margin: 0 0 0 -32px !important;
+	margin-left: -32px !important;
+}
 
 
 /*************** Blog Full Width Headers / Images *************/
 
 /* three-color bar above blog header images */
 	.article-color-bar {
-		background-color: <?php echo $options['extra-color-1']; ?>;
+		background-color: <?php echo $options['accent-color']; ?>;
 		height: 6px;
 		position: relative;
 		width: 100%;
@@ -165,7 +170,7 @@ div.std-blog-fullwidth article.post .content-inner {
 		width: 33%;
 	}
 	.article-color-bar div:first-child {
-		background-color: <?php echo $options['accent-color']; ?>;
+		background-color: <?php echo $options['extra-color-1']; ?>;
 		left: 0;
 	}
 	.article-color-bar div:last-child {
@@ -199,30 +204,35 @@ div.std-blog-fullwidth article.post .content-inner {
 	}
 
 /* post titles */
-	div.blog-header-post-title h1,
+	div.blog-header-post-title h1 {
+		font-size: 3em;
+		font-weight: 400;
+		line-height: 130%;
+		padding: .5em 0;
+	}
 	div.blog-header-post-title h2 {
 		background-color: #f8f8f8;
 		background-color: rgb(248, 248, 248);
 		background-color: rgba(248, 248, 248, 1);
-		color: <?php echo $options['extra-color-3']; ?>;
+		color: #333;
 		font-size: 3em;
 		font-weight: 400;
 		line-height: 130%;
 		margin-top: -90px;
-		padding: .75em 0;
+		padding: .75em;
 		text-align: center;
-		border-top: 1px solid <?php echo $options['extra-color-3']; ?>;
-		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(<?php echo $options['extra-color-3']; ?>), to(transparent));
-		background-image: -webkit-linear-gradient(<?php echo $options['extra-color-3']; ?>, transparent);
+		border-top: 1px solid <?php echo $options['extra-color-1']; ?>;
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(<?php echo $options['extra-color-1']; ?>), to(transparent));
+		background-image: -webkit-linear-gradient(<?php echo $options['extra-color-1']; ?>, transparent);
 		background-image:
-			-moz-linear-gradient(<?php echo $options['extra-color-3']; ?>, transparent),
-			-moz-linear-gradient(<?php echo $options['extra-color-3']; ?>, transparent);
+			-moz-linear-gradient(<?php echo $options['extra-color-1']; ?>, transparent),
+			-moz-linear-gradient(<?php echo $options['extra-color-1']; ?>, transparent);
 		background-image:
-			-o-linear-gradient(<?php echo $options['extra-color-3']; ?>, transparent),
-			-o-linear-gradient(<?php echo $options['extra-color-3']; ?>, transparent);
+			-o-linear-gradient(<?php echo $options['extra-color-1']; ?>, transparent),
+			-o-linear-gradient(<?php echo $options['extra-color-1']; ?>, transparent);
 		background-image: 
-			linear-gradient(<?php echo $options['extra-color-3']; ?>, transparent),
-			linear-gradient(<?php echo $options['extra-color-3']; ?>, transparent);
+			linear-gradient(<?php echo $options['extra-color-1']; ?>, transparent),
+			linear-gradient(<?php echo $options['extra-color-1']; ?>, transparent);
 		-moz-background-size: 1px 100%;
 		background-size: 1px 100%;
 		background-position: 0 0, 100% 0;
@@ -233,10 +243,17 @@ div.std-blog-fullwidth article.post .content-inner {
 		-o-transition: color .35s;
 		transition: color .35s;
 	}
-	div.blog-header-post-title h1:hover,
 	div.blog-header-post-title h2:hover {
 		color: <?php echo $options['accent-color']; ?>;
 	}
+	@media all and (max-width: 999px) {
+		div.blog-header-post-title h1,
+		div.blog-header-post-title h2 {
+			font-size: 2.5em;
+		}
+	}
+
+	
 
 
 
@@ -249,12 +266,22 @@ div.container-wrap.std-blog-fullwidth article .container.main-content img {
 	display: none;
 }
 
-div.container-wrap.std-blog-fullwidth article .container .post-content {
-	padding: 0 120px;
-}
+/* post content */
+	div.container-wrap.std-blog-fullwidth article .container .post-content {
+		padding: 0 120px;
+	}
+	@media all and (max-width: 999px) {
+		div.container-wrap.std-blog-fullwidth article .container .post-content {
+			padding: 0 20px;
+		}
+	}
+
+
+
 div.container-wrap.std-blog-fullwidth article .container .post-content .content-inner {
 	border-bottom: none;
 }
+
 
 div.container-wrap.std-blog-fullwidth article .post-header {
 	text-align: center;
