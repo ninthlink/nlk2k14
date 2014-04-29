@@ -50,10 +50,19 @@ if( !is_single() ): ?>
 
 			<div class="row">
 				<div class="post-content">
+
+					<div class="post-meta <?php echo $extra_class; ?>">
+
+						<div class="date">
+							<span class="month"><?php the_time('M'); ?></span>
+							<span class="day"><?php the_time('d'); ?></span>
+						</div><!--/date-->
+
+					</div><!--/post-meta-->
+
 					<div class="content-inner">
 						
 						<div class="post-header">
-							<span class="meta-author"><?php echo __('', NECTAR_THEME_NAME); ?> <?php the_author_posts_link(); ?></span>
 						</div><!--/post-header-->
 
 						<?php 
@@ -77,17 +86,17 @@ if( !is_single() ): ?>
 
 					<div class="post-meta <?php echo $extra_class; ?>">
 
-						<div class="date">
-							<span class="month"><?php the_time('M'); ?></span>
-							<span class="day"><?php the_time('d'); ?></span>
-						</div><!--/date-->
-							
+						<span class="meta-author">
+							<?php echo get_avatar( get_the_author_meta( 'ID' ), 96 ); ?>
+							<?php echo __('', NECTAR_THEME_NAME); ?> <?php the_author_posts_link(); ?>
+						</span>
+
 						<div class="nectar-love-wrap">
 							<?php if( function_exists('nectar_love') ) nectar_love(); ?>
 						</div><!--/nectar-love-wrap-->	
 										
 					</div><!--/post-meta-->
-					
+
 				</div><!--/post-content-->
 
 			</div>

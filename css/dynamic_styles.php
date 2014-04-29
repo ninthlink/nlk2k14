@@ -262,9 +262,11 @@ div.container-wrap.std-blog-fullwidth.single-entry div.post-featured-img-full-wi
 	padding: .5em 0;
 }
 
+/*
 div.container-wrap.std-blog-fullwidth article .container.main-content img {
 	display: none;
 }
+*/
 
 /* post content */
 	div.container-wrap.std-blog-fullwidth article .container .post-content {
@@ -291,6 +293,17 @@ div.container-wrap.std-blog-fullwidth article.post .post-meta {
 	display: block;
 	margin-bottom: inherit;
 	border-right: none;
+}
+div.container-wrap.std-blog-fullwidth article.post .post-meta img.avatar {
+	<?php 
+	$avatar_border_width = '2px';
+	$avatar_border_style = 'solid';
+	?>
+	border-radius: 999px;
+	border-top: <?php echo $avatar_border_width . ' ' . $avatar_border_style . ' ' . $options['accent-color']; ?>;
+	border-left: <?php echo $avatar_border_width . ' ' . $avatar_border_style . ' ' . $options['extra-color-1']; ?>;
+	border-right: <?php echo $avatar_border_width . ' ' . $avatar_border_style . ' ' . $options['extra-color-2']; ?>;
+	border-bottom: <?php echo $avatar_border_width . ' ' . $avatar_border_style . ' ' . $options['extra-color-3']; ?>;
 }
 div.container-wrap.std-blog-fullwidth article.post .post-meta {
 	position: relative;
