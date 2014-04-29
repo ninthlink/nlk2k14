@@ -36,7 +36,7 @@ if( !is_single() ): ?>
 		// generate top header/title banner output code
 		$output .= '<div class="post-featured-img-full-width ' . ( $src ? 'w-img' : 'no-img' ) . '" style="';
 		if ( $src ) { $output .= 'background-image:url(\'' . $src . '\');'; }
-		else { $output .= 'background-color:' . $options["accent-color"] . ';'; }
+		else { $output .= 'background:' . $options["accent-color"] . ' url(' . get_stylesheet_directory_uri() . '/images/nlkrep.png) repeat 0 0;'; }
 		$output .= '"></div>';
 		?>
 

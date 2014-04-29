@@ -195,8 +195,11 @@ div.std-blog-fullwidth article.post .content-inner {
 		-webkit-filter: contrast(120%) saturate(125%);
 		filter: contrast(120%) saturate(125%);
 
-		-webkit-box-shadow: inset 0 0 200px 0px rgba(0, 0, 0, .55);
-		box-shadow: inset 0 0 200px 0px rgba(0, 0, 0, .55);
+		-webkit-box-shadow: inset 0 0 250px 50px rgba(0, 0, 0, .55);
+		-moz-box-shadow: inset 0 0 250px 50px rgba(0, 0, 0, .55);
+		-ms-box-shadow: inset 0 0 250px 50px rgba(0, 0, 0, .55);
+		-o-box-shadow: inset 0 0 250px 50px rgba(0, 0, 0, .55);
+		box-shadow: inset 0 0 250px 50px rgba(0, 0, 0, .55);
 	}
 	div.post-featured-img-full-width.no-img {
 		min-height: 120px;
