@@ -10,15 +10,12 @@ global $layout;
 
 $extra_class = '';
 
+$src = false;
+
 // get image from post, if any
 if ( has_post_thumbnail() ) {
 	$src = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 } // check if the post has a Post Thumbnail assigned to it.
-else {
-	$extra_class = 'no-img';
-	$src = post_image_src();
-} // otherwise use first image contained in post content
-
 
 $output = '';
 
@@ -28,7 +25,7 @@ $output = '';
 if( !is_single() ): ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<div class="article-color-bar"><div></div><div></div><div></div></div>
+		<!--div class="article-color-bar"><div></div><div></div><div></div></div-->
 
 		<?php
 		

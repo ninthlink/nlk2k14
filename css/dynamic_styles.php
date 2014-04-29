@@ -328,3 +328,39 @@ div.container-wrap.std-blog-fullwidth article.post .nectar-love-wrap {
 	right: 0;
 	top: 38px;
 }
+
+
+
+
+#goto-butts {
+	position: fixed;
+	bottom: 48px;
+	right: 33px;
+	width: 29px;
+	z-index: 9999;
+	opacity: .4;
+}
+#goto-butts:hover {
+	opacity: 1;
+}
+#goto-butts a {
+	display: block;
+	width: 12px;
+	height: 12px;
+	border-radius: 999px;
+	border: 2px solid #c5c5c5;
+	color: transparent;
+	cursor: pointer;
+	margin: 12px auto;
+	-webkit-transition: background-color .35s;
+	-moz-transition: background-color .35s;
+	-ms-transition: background-color .35s;
+	-o-transition: background-color .35s;
+	transition: background-color .35s;
+}
+#goto-butts a:hover {
+	background-color: <?php echo $options['accent-color']; ?>;
+}
+#goto-butts a.active {
+	background-color: <?php echo $options['extra-color-1']; ?>;
+}

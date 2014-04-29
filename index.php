@@ -12,6 +12,8 @@ get_header();
 
 <?php nectar_page_header(get_option('page_for_posts')); ?>
 
+<div id="goto-butts"></div>
+
 <div class="container-wrap <?php if ( $blog_type == 'std-blog-fullwidth' ) echo 'std-blog-fullwidth'; ?>  <?php echo ( is_single() ? 'single-entry' : 'blog-posts' ); ?>">
 
 	<?php
