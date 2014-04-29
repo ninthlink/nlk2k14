@@ -292,75 +292,72 @@ div.container-wrap.std-blog-fullwidth article .post-header {
 	text-align: center;
 }
 
-div.container-wrap.std-blog-fullwidth article.post .post-meta {
-	border-right: none;
-	display: block;
-	left: inherit;
-	margin-bottom: inherit;
-	margin-top: 50px;
-	position: relative;
-	top: inherit;
-}
-div.container-wrap.std-blog-fullwidth article.post .post-meta img.avatar {
-	position: relative;
-	float: left;
+/* post meta */
+	div.container-wrap.std-blog-fullwidth article.post .post-meta {
+		border-right: none;
+		display: block;
+		left: inherit;
+		margin-bottom: inherit;
+		margin-top: 50px;
+		position: relative;
+		top: inherit;
+	}
+	div.container-wrap.std-blog-fullwidth article.post .post-meta img.avatar {
+		position: relative;
+		float: left;
 
-	<?php 
-	$avatar_border_width = '8px';
-	$avatar_border_style = 'solid';
-	?>
-	border-radius: 999px;
+		<?php 
+		$avatar_border_width = '8px';
+		$avatar_border_style = 'solid';
+		?>
+		border-radius: 999px;
 
-	border-top: <?php echo $avatar_border_width . ' ' . $avatar_border_style . ' ' . $options['accent-color']; ?>;
-	border-left: <?php echo $avatar_border_width . ' ' . $avatar_border_style . ' ' . $options['extra-color-1']; ?>;
-	border-right: <?php echo $avatar_border_width . ' ' . $avatar_border_style . ' ' . $options['extra-color-2']; ?>;
-	border-bottom: <?php echo $avatar_border_width . ' ' . $avatar_border_style . ' ' . $options['extra-color-3']; ?>;
+		border-top: <?php echo $avatar_border_width . ' ' . $avatar_border_style . ' ' . $options['accent-color']; ?>;
+		border-left: <?php echo $avatar_border_width . ' ' . $avatar_border_style . ' ' . $options['extra-color-1']; ?>;
+		border-right: <?php echo $avatar_border_width . ' ' . $avatar_border_style . ' ' . $options['extra-color-2']; ?>;
+		border-bottom: <?php echo $avatar_border_width . ' ' . $avatar_border_style . ' ' . $options['extra-color-3']; ?>;
 
-	border: <?php echo $avatar_border_width; ?> solid #c5c5c5;
-}
-div.container-wrap.std-blog-fullwidth article.post .post-meta img.avatar + a[rel='author'] {
-	display: inline-block;
-	padding: 36px 0 0 10px;
-}
-
-div.container-wrap.std-blog-fullwidth article.post .nectar-love-wrap {
-	position: absolute;
-	right: 0;
-	top: 38px;
-}
+		border: <?php echo $avatar_border_width; ?> solid #c5c5c5;
+	}
+	div.container-wrap.std-blog-fullwidth article.post .post-meta span {
+		display: inline-block;
+		padding: 36px 0 0 10px;
+	}
 
 
+/* blog dotts - not used */
+	/*
+	#goto-butts {
+		position: fixed;
+		bottom: 48px;
+		right: 33px;
+		width: 29px;
+		z-index: 9999;
+		opacity: .4;
+	}
+	#goto-butts:hover {
+		opacity: 1;
+	}
+	#goto-butts a {
+		display: block;
+		width: 12px;
+		height: 12px;
+		border-radius: 999px;
+		border: 2px solid #c5c5c5;
+		color: transparent;
+		cursor: pointer;
+		margin: 12px auto;
+		-webkit-transition: background-color .35s;
+		-moz-transition: background-color .35s;
+		-ms-transition: background-color .35s;
+		-o-transition: background-color .35s;
+		transition: background-color .35s;
+	}
+	#goto-butts a:hover {
+		background-color: <?php echo $options['accent-color']; ?>;
+	}
+	#goto-butts a.active {
+		background-color: <?php echo $options['extra-color-1']; ?>;
+	}
+	*/
 
-
-#goto-butts {
-	position: fixed;
-	bottom: 48px;
-	right: 33px;
-	width: 29px;
-	z-index: 9999;
-	opacity: .4;
-}
-#goto-butts:hover {
-	opacity: 1;
-}
-#goto-butts a {
-	display: block;
-	width: 12px;
-	height: 12px;
-	border-radius: 999px;
-	border: 2px solid #c5c5c5;
-	color: transparent;
-	cursor: pointer;
-	margin: 12px auto;
-	-webkit-transition: background-color .35s;
-	-moz-transition: background-color .35s;
-	-ms-transition: background-color .35s;
-	-o-transition: background-color .35s;
-	transition: background-color .35s;
-}
-#goto-butts a:hover {
-	background-color: <?php echo $options['accent-color']; ?>;
-}
-#goto-butts a.active {
-	background-color: <?php echo $options['extra-color-1']; ?>;
-}

@@ -8,12 +8,13 @@ jQuery(function($) {
 		});
 	}
 
+	/* scroll-to blog dots... 
+
 	$('.std-blog-fullwidth article').each( function(){
 		var offset = $(this).offset(),
 			id = $(this).attr('id');
 		$('#goto-butts').append('<a linkedId="'+id+'" offset="'+offset.top+'">'+id+'</a>');
 	});
-	
 	$('#goto-butts a').click(function(){
 		var t = $(this).attr('offset'),
 			h = $('#header-outer').height();
@@ -23,4 +24,6 @@ jQuery(function($) {
 			scrollTop: t - h,
 		},750);
 	});
+	*/
+
 });
