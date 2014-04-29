@@ -88,7 +88,7 @@ if( !is_single() ): ?>
 
 						<span class="meta-author">
 							<?php echo get_avatar( get_the_author_meta( 'ID' ), 96 ); ?>
-							<?php echo __('', NECTAR_THEME_NAME); ?> <?php the_author_posts_link(); ?>
+							<?php the_author_posts_link(); ?>
 						</span>
 
 						<div class="nectar-love-wrap">
