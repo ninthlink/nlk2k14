@@ -20,6 +20,69 @@ get_header();
 
 	if ( $blog_type == 'std-blog-fullwidth' ) {
 
+		if ( is_archive() ) { // for now?
+			if ( is_author() ) {
+				echo '<div class="post-featured-img-full-width no-img" style="background:' . $options["accent-color"] . ' url(' . get_stylesheet_directory_uri() . '/images/nlkrep.png) repeat 0 0;"></div>';
+				/*
+						 * Queue the first post, that way we know what author
+						 * we're dealing with (if that is the case).
+						 *
+						 * We reset this later so we can run the loop properly
+						 * with a call to rewind_posts().
+						 */
+						the_post();
+
+						
+					?>
+		<div class="container blog-header-post-title">
+			<h2><span><?php the_author(); ?></span></h2>
+		</div>
+
+		<div class="container main-content authdr">
+
+			<div class="row">
+				<div class="post-content">
+
+					<div class="content-inner">
+						
+						<div class="post-header">
+						</div><!--/post-header-->
+            <div class="post-meta">
+							<span class="author-description"><?php if( function_exists('get_avatar') ) { echo get_avatar( get_the_author_meta( 'ID' ), 96 ); } ?>
+				<?php if ( get_the_author_meta( 'description' ) ) : ?>
+				<?php the_author_meta( 'description' ); ?>
+				<?php endif; ?>
+        </span>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <?php
+					/*
+					 * Since we called the_post() above, we need to rewind
+					 * the loop back to the beginning that way we can run
+					 * the loop properly, in full.
+					 */
+					rewind_posts();
+					
+			} else {
+				echo '<div class="blog-header-post-title chdr"><h1>';
+				if ( is_day() ) :
+					printf( __( 'Daily Archives: %s' ), '<span>' . get_the_date() . '</span>' );
+				elseif ( is_month() ) :
+					printf( __( 'Monthly Archives: %s' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format' ) ) . '</span>' );
+				elseif ( is_year() ) :
+					printf( __( 'Yearly Archives: %s' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format' ) ) . '</span>' );
+				elseif ( is_category() ) :
+					printf( __( 'Category Archives: %s' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+				else :
+					_e( 'Archives', 'twentytwelve' );
+				endif;
+				echo '</h1></div>';
+			}
+		}
+
 		// do the blog section with full width header/title
 
 		if(have_posts()) : while(have_posts()) : the_post();

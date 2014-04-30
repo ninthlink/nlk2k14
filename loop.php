@@ -22,7 +22,7 @@ $output = '';
 
 
 // Blog page
-if( !is_single() ): ?>
+//if( !is_single() ): ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<!--div class="article-color-bar"><div></div><div></div><div></div></div-->
@@ -40,7 +40,7 @@ if( !is_single() ): ?>
 		<?php print($output); ?>
 
 		<div class="container blog-header-post-title">
-			<a href="<?php echo get_permalink(); ?>"><h2 class="entry-title"><span><?php echo get_the_title(); ?></span></h2></a>
+			<?php if( !is_single() ) { ?><a href="<?php echo get_permalink(); ?>"><?php } ?><h2 class="entry-title"><span><?php echo get_the_title(); ?></span></h2><?php if( !is_single() ) { ?></a><?php } ?>
 		</div>
 
 		<div class="container main-content">
@@ -74,12 +74,35 @@ if( !is_single() ): ?>
 
 					<div class="post-meta <?php echo $extra_class; ?>">
 
-							<?php echo get_avatar( get_the_author_meta( 'ID' ), 96 ); ?>
+							<?php if( function_exists('get_avatar') ) { echo get_avatar( get_the_author_meta( 'ID' ), 96 ); } ?>
 
-							<span class="meta-author"><?php the_author_posts_link(); ?></span><span class="meta-space">&nbsp;|&nbsp;</span><span class="meta-date"><?php the_time('M d'); ?></span>
+							<span class="meta-author"><?php the_author_posts_link(); ?></span><span class="meta-space">&nbsp;|&nbsp;</span><span class="meta-date"><?php if( !is_single() ) { ?><a href="<?php echo get_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php } ?><?php the_time('M d'); ?><?php if( !is_single() ) { ?></a><?php } ?></span><?php if( is_single() ) { ?><span class="meta-space">&nbsp;|&nbsp;</span><span class="meta-category"><?php the_category(', '); ?></span>
+							
+              <div id="author-bio">
+							<div id="author-info">
+								<p><?php the_author_meta('description'); ?></p>
+							</div>
+							
+							<div class="clear"></div>
+							
+						</div>
+							
+							<?php } else {
+							if ( comments_open() && ! is_single() ) : ?><span class="meta-space">&nbsp;|&nbsp;</span><span class="comments-link">
+				<?php comments_popup_link( __( 'Leave a comment' ), __( 'One comment so far' ), __( 'View all % comments' ) ); ?>
+			</span>
+		<?php endif; // comments_open()
+		
+							} ?>
 										
 					</div><!--/post-meta-->
 
+							<?php if ( is_single() ) { ?>
+        <div class="comments-section">
+             <?php comments_template(); ?>
+         </div> 
+         <?php } ?>
+         
 				</div><!--/post-content-->
 
 			</div>
@@ -88,4 +111,4 @@ if( !is_single() ): ?>
 			
 	</article><!--/article-->
 
-<?php endif; ?>
+<?php //endif; ?>

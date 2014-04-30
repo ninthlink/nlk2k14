@@ -1,5 +1,3 @@
-<?php get_header(); ?>
-
 <?php 
 
 $options = get_option('salient');
@@ -8,19 +6,37 @@ $blog_type = $options['blog_type'];
 
 if($blog_type == null) $blog_type = 'std-blog-fullwidth';
 
+get_header();
+
 $bg = get_post_meta($post->ID, '_nectar_header_bg', true);
 $bg_color = get_post_meta($post->ID, '_nectar_header_bg_color', true);
-
+/*
 if(have_posts()) : while(have_posts()) : the_post();
 
 	nectar_page_header($post->ID); 
 
 endwhile; endif;
-
+*/
 ?>
 
 <div class="container-wrap <?php if ( $blog_type == 'std-blog-fullwidth' ) echo 'std-blog-fullwidth'; ?> <?php if ( is_single() ) echo 'single-entry'; ?>">
+<!-- test1 preloop -->
+	<?php
 
+	if ( $blog_type == 'std-blog-fullwidth' ) {
+echo '<!-- test2 inif -->';
+		// do the blog section with full width header/title
+
+		if(have_posts()) : while(have_posts()) : the_post();
+echo '<!-- test3 inloop -->';
+			get_template_part( 'loop', get_post_format() );
+
+		endwhile; endif;
+		
+		}
+
+	else {
+		?>
 	<div class="article-color-bar"><div></div><div></div><div></div></div>
 
 	<div class="container blog-header-post-title">
@@ -146,7 +162,7 @@ endwhile; endif;
 				
 				<div class="comments-section">
 	   			   <?php comments_template(); ?>
-				 </div>   
+				 </div>  
 				 
 			</div><!--/span_9-->
 			
@@ -161,6 +177,7 @@ endwhile; endif;
 		</div><!--/row-->
 		
 	</div><!--/container-->
+<?php } ?>
 
 </div><!--/container-wrap-->
 	

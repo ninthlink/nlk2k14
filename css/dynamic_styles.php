@@ -213,6 +213,7 @@ div.std-blog-fullwidth article.post .content-inner {
 		line-height: 130%;
 		padding: .5em 0;
 	}
+	div.blog-header-post-title h1,
 	div.blog-header-post-title h2 {
 		background-color: #f8f8f8;
 		background-color: rgb(248, 248, 248);
@@ -246,9 +247,14 @@ div.std-blog-fullwidth article.post .content-inner {
 		-o-transition: color .35s;
 		transition: color .35s;
 	}
-	div.blog-header-post-title h2:hover {
+	div.blog-header-post-title a h2:hover {
 		color: <?php echo $options['accent-color']; ?>;
 	}
+  div.blog-header-post-title.chdr h1 {
+    background: #000 !important;
+  	color: #fff;
+    margin: 0;
+  }
 	@media all and (max-width: 999px) {
 		div.blog-header-post-title h1,
 		div.blog-header-post-title h2 {
@@ -272,10 +278,12 @@ div.container-wrap.std-blog-fullwidth article .container.main-content img {
 */
 
 /* post content */
-	div.container-wrap.std-blog-fullwidth article .container .post-content {
+	div.container-wrap.std-blog-fullwidth .container .post-content,
+  div.container-wrap.std-blog-fullwidth article .container .post-content {
 		padding: 0 120px;
 	}
 	@media all and (max-width: 999px) {
+		div.container-wrap.std-blog-fullwidth .container .post-content,
 		div.container-wrap.std-blog-fullwidth article .container .post-content {
 			padding: 0 20px;
 		}
@@ -302,6 +310,7 @@ div.container-wrap.std-blog-fullwidth article .post-header {
 		position: relative;
 		top: inherit;
 	}
+	div.container-wrap.std-blog-fullwidth img.avatar,
 	div.container-wrap.std-blog-fullwidth article.post .post-meta img.avatar {
 		position: relative;
 		float: left;
@@ -319,10 +328,17 @@ div.container-wrap.std-blog-fullwidth article .post-header {
 
 		border: <?php echo $avatar_border_width; ?> solid #c5c5c5;
 	}
+	div.container-wrap.std-blog-fullwidth .authdr .post-meta span,
 	div.container-wrap.std-blog-fullwidth article.post .post-meta span {
 		display: inline-block;
 		padding: 36px 0 0 10px;
 	}
+	div.container-wrap.std-blog-fullwidth .authdr .post-meta span {
+  	padding: 0;
+  }
+  div.container-wrap.std-blog-fullwidth .authdr .post-meta span img.avatar {
+  	margin: -10px 10px 30px 0;
+  }
 
 
 /* blog dotts - not used */
