@@ -48,6 +48,8 @@ $logo_class = (!empty($options['use-logo']) && $options['use-logo'] == '1') ? nu
 
 <body <?php body_class(); ?> data-bg-header="<?php echo (!empty($header_bg) || !empty($header_title) || $parallax_nectar_slider == 1) ? 'true' : 'false'; ?>" data-ext-responsive="<?php echo (!empty($options['responsive']) && $options['responsive'] == 1 && !empty($options['ext_responsive']) && $options['ext_responsive'] == '1') ? 'true' : 'false'; ?>" data-header-resize="<?php if(!empty($options['header-resize-on-scroll'])) { echo $options['header-resize-on-scroll']; } else { echo '0'; } ?>" data-header-color="<?php echo (!empty($options['header-color'])) ? $options['header-color'] : 'light' ; ?>" <?php echo (!empty($options['transparent-header']) && $options['transparent-header'] == '1') ? null : 'data-transparent-header="false"'; ?> data-smooth-scrolling="<?php echo $options['smooth-scrolling']; ?>" data-responsive="<?php echo (!empty($options['responsive']) && $options['responsive'] == 1) ? '1'  : '0' ?>" >
 
+<?php google_tag_manager(); ?>
+
 <?php if(!empty($options['boxed_layout']) && $options['boxed_layout'] == '1') { echo '<div id="boxed">'; } ?>
 
 <?php $using_secondary = (!empty($options['header_layout'])) ? $options['header_layout'] : ' '; 
