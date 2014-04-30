@@ -19,7 +19,7 @@
 
 ?>
 
-/***************** Scrollbar ******************/
+/* - - - - - Scrollbar - - - - - */
 
 	#ascrail2000 {
 		background-color: #555;
@@ -78,7 +78,7 @@
 	    filter: none;
 	}
 
-/******************** Nav Icons ********************/
+/* - - - - - Nav Icons - - - - - */
 	nav [class^="icon-"], nav [class*=" icon-"] {
 		background-color: transparent;
 		color: inherit;
@@ -98,10 +98,54 @@
 		color: <?php echo $options["accent-color"]; ?>;
 	}
 
+/* - - - - - Inputs and Forms - - - - - */
+	input[type="text"], input[type="tel"], input[type="email"], textarea {
+		background-color: transparent !important;
+		border: 2px solid #c8c8c8 !important;
+		font-size: 16px !important;
+		margin-bottom: 20px !important;
+		-webkit-transition: border .35s;
+	}
+	input[type="text"]:hover, input[type="tel"]:hover, input[type="email"]:hover, textarea:hover,
+	input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus, textarea:focus {
+		background-color: transparent !important;
+		border: 2px solid <?php echo $options['accent-color']; ?> !important;
+	}
+	.wpcf7-list-item {
+		display: block;
+	}
+	form label {
+		font-size: 16px;
+	}
+	input[type="submit"] {
+		background-color: transparent !important;
+		border: 2px solid <?php echo $options['accent-color']; ?> !important;
+		border-radius: 2px !important;
+		box-shadow: none !important;
+		-webkit-box-shadow: none !important;
+		-moz-box-shadow: none !important;
+		-o-box-shadow: none !important;
+		color: <?php echo $options['accent-color']; ?> !important;
+		font-family: 'OpenSansBold';
+		font-size: 16px !important;
+		font-weight: bold;
+		opacity: 1 !important;
+		padding: 12px 50px !important;
+		text-transform: uppercase;
+		-moz-transition: all 0.2s linear !important;
+		-webkit-transition: all 0.2s linear !important;
+		-o-transition: all 0.2s linear !important;
+		transition: all 0.2s linear !important;
+		-webkit-border-radius: 2px !important;
+		-o-border-radius: 2px !important;
+	}
+	input[type="submit"]:hover {
+		background-color: <?php echo $options['accent-color']; ?> !important;
+		border: 2px solid <?php echo $options['accent-color']; ?> !important;
+		color: #fff !important;
+	}
 
-
-
-/***************** Image Gray-scaler ***********************/
+/* - - - - - Image Gray-scaler - - - - - */
 
 	img.grayscale { 
 	    filter: grayscale(100%);
@@ -116,45 +160,42 @@
 	    filter: none;
 	}
 
+/* - - - - - FIXES - - - - - */
 
+	/* lists */
+	.main-content .nectar-fancy-ul ul {
+		margin-left: -8px;
+		margin-bottom: 30px;
+	}
+	/* articles w/ floated content */
+	div.std-blog-fullwidth article:after {
+		content: ' ';
+		display: block;
+		clear: both;
+	}
+	div.std-blog-fullwidth article.post {
+		margin-bottom: 100px;
+	}
+	div.std-blog-fullwidth.single article.post {
+		border-bottom: 1px solid #DDDDDD;
+		padding-bottom: 50px;
+		margin-bottom: 50px;
+	}
+	div.std-blog-fullwidth article.post .content-inner {
+		border-bottom: none;
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+	}
 
-/************ FIXES ****************/
+	.flex-gallery ul.flex-direction-nav {
+		left: 50%;
+		margin: 0 0 0 -32px !important;
+		margin-left: -32px !important;
+	}
 
-/* lists */
-.main-content .nectar-fancy-ul ul {
-	margin-left: -8px;
-	margin-bottom: 30px;
-}
-/* articles w/ floated content */
-div.std-blog-fullwidth article:after {
-	content: ' ';
-	display: block;
-	clear: both;
-}
-div.std-blog-fullwidth article.post {
-	margin-bottom: 100px;
-}
-div.std-blog-fullwidth.single article.post {
-	border-bottom: 1px solid #DDDDDD;
-	padding-bottom: 50px;
-	margin-bottom: 50px;
-}
-div.std-blog-fullwidth article.post .content-inner {
-	border-bottom: none;
-	padding-bottom: 0px;
-	margin-bottom: 0px;
-}
+/* - - - - - Blog Full Width Headers / Images - - - - - */
 
-.flex-gallery ul.flex-direction-nav {
-	left: 50%;
-	margin: 0 0 0 -32px !important;
-	margin-left: -32px !important;
-}
-
-
-/*************** Blog Full Width Headers / Images *************/
-
-/* three-color bar above blog header images */
+	/* three-color bar above blog header images */
 	.article-color-bar {
 		background-color: <?php echo $options['accent-color']; ?>;
 		height: 6px;
@@ -178,12 +219,12 @@ div.std-blog-fullwidth article.post .content-inner {
 		right: 0;
 	}
 
-/* fix for top header/menu bar */
+	/* fix for top header/menu bar */
 	div.container-wrap.std-blog-fullwidth {
 		margin-top: -93px;
 	}
 
-/* blog full-width header images */
+	/* blog full-width header images */
 	div.post-featured-img-full-width {
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -206,7 +247,7 @@ div.std-blog-fullwidth article.post .content-inner {
 		height: 180px;
 	}
 
-/* post titles */
+	/* post titles */
 	div.blog-header-post-title h1 {
 		font-size: 3em;
 		font-weight: 400;
@@ -250,11 +291,11 @@ div.std-blog-fullwidth article.post .content-inner {
 	div.blog-header-post-title a h2:hover {
 		color: <?php echo $options['accent-color']; ?>;
 	}
-  div.blog-header-post-title.chdr h1 {
-    background: #000 !important;
-  	color: #fff;
-    margin: 0;
-  }
+	div.blog-header-post-title.chdr h1 {
+		background: #000 !important;
+		color: #fff;
+		margin: 0;
+	}
 	@media all and (max-width: 999px) {
 		div.blog-header-post-title h1,
 		div.blog-header-post-title h2 {
@@ -339,41 +380,4 @@ div.container-wrap.std-blog-fullwidth article .post-header {
   div.container-wrap.std-blog-fullwidth .authdr .post-meta span img.avatar {
   	margin: -10px 10px 30px 0;
   }
-
-
-/* blog dotts - not used */
-	/*
-	#goto-butts {
-		position: fixed;
-		bottom: 48px;
-		right: 33px;
-		width: 29px;
-		z-index: 9999;
-		opacity: .4;
-	}
-	#goto-butts:hover {
-		opacity: 1;
-	}
-	#goto-butts a {
-		display: block;
-		width: 12px;
-		height: 12px;
-		border-radius: 999px;
-		border: 2px solid #c5c5c5;
-		color: transparent;
-		cursor: pointer;
-		margin: 12px auto;
-		-webkit-transition: background-color .35s;
-		-moz-transition: background-color .35s;
-		-ms-transition: background-color .35s;
-		-o-transition: background-color .35s;
-		transition: background-color .35s;
-	}
-	#goto-butts a:hover {
-		background-color: <?php echo $options['accent-color']; ?>;
-	}
-	#goto-butts a.active {
-		background-color: <?php echo $options['extra-color-1']; ?>;
-	}
-	*/
 
