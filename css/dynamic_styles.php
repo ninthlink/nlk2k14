@@ -57,6 +57,8 @@
 	}
 	/* portfolio details :: removes title bar from portfolio details pages */
 	#full_width_portfolio .row.project-title { display: none; }
+	/* phone numbers should be links for mobile */
+	a[href^="tel"] { color: inherit; text-decoration: none; }
 
 /* - - - - - Scrollbar - - - - - */
 
