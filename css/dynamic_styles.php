@@ -19,6 +19,45 @@
 
 ?>
 
+/* - - - - - FIXES - - - - - */
+	small {
+		font-size: .75em !important;
+	}
+	/* lists :: left align with above content */
+	.main-content .nectar-fancy-ul ul {
+		margin-left: -8px;
+		margin-bottom: 30px;
+	}
+	/* articles w/ floated content :: adds spacing to bottom of article section (instead of inside post content) */
+	div.std-blog-fullwidth article:after {
+		content: ' ';
+		display: block;
+		clear: both;
+	}
+	div.std-blog-fullwidth article.post {
+		margin-bottom: 100px;
+	}
+	/* single article/post :: move bottom border line to very bottom of article */
+	div.std-blog-fullwidth.single article.post {
+		border-bottom: 1px solid #DDDDDD;
+		padding-bottom: 50px;
+		margin-bottom: 50px;
+	}
+	/* single article/post :: border bottom fix, moved to main article content */
+	div.std-blog-fullwidth article.post .content-inner {
+		border-bottom: none;
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+	}
+	/* gallery fix for non nectar gallery :: center those orange arrow things instead of top right corner */
+	.flex-gallery ul.flex-direction-nav {
+		left: 50%;
+		margin: 0 0 0 -32px !important;
+		margin-left: -32px !important;
+	}
+	/* portfolio details :: removes title bar from portfolio details pages */
+	#full_width_portfolio .row.project-title { display: none; }
+
 /* - - - - - Scrollbar - - - - - */
 
 	#ascrail2000 {
@@ -158,43 +197,6 @@
 	    filter: grayscale(0%);
 	    -webkit-filter: grayscale(0%);
 	    filter: none;
-	}
-
-/* - - - - - FIXES - - - - - */
-
-	small {
-		font-size: .75em;
-	}
-
-	/* lists */
-	.main-content .nectar-fancy-ul ul {
-		margin-left: -8px;
-		margin-bottom: 30px;
-	}
-	/* articles w/ floated content */
-	div.std-blog-fullwidth article:after {
-		content: ' ';
-		display: block;
-		clear: both;
-	}
-	div.std-blog-fullwidth article.post {
-		margin-bottom: 100px;
-	}
-	div.std-blog-fullwidth.single article.post {
-		border-bottom: 1px solid #DDDDDD;
-		padding-bottom: 50px;
-		margin-bottom: 50px;
-	}
-	div.std-blog-fullwidth article.post .content-inner {
-		border-bottom: none;
-		padding-bottom: 0px;
-		margin-bottom: 0px;
-	}
-
-	.flex-gallery ul.flex-direction-nav {
-		left: 50%;
-		margin: 0 0 0 -32px !important;
-		margin-left: -32px !important;
 	}
 
 /* - - - - - Blog Full Width Headers / Images - - - - - */
