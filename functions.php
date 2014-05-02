@@ -54,3 +54,8 @@ GTM;
 function google_tag_manager() {
 	do_action('do_google_tag_manager');
 }
+
+add_action('pre_option_image_default_link_type', 'always_link_images_to_none');
+function always_link_images_to_none() {
+	return 'none';
+}
