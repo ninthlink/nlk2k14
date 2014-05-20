@@ -416,6 +416,9 @@ div#header-space {
 	display: block !important;
 	height: 58px !important;
 }
+body.home div#header-space {
+	display:none !important;
+}
 @media only screen and (min-width: 1001px) {
 	#header-outer {
 		padding-top: 20px !important;

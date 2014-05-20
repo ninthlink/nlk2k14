@@ -25,8 +25,7 @@ add_action( 'wp_print_scripts', 'nl2k14_js' );
 
 
 function nl2k14_styles() {	
-		 wp_register_style("dynamic-styles", get_stylesheet_directory_uri() . "/css/dynamic_styles.php");
-		 wp_enqueue_style('dynamic-styles'); 
+	 wp_enqueue_style("nlk", get_stylesheet_directory_uri() . "/css/dynamic_styles.php", array(), '1.2');
 }
 add_action('wp_enqueue_scripts', 'nl2k14_styles');
 
