@@ -419,7 +419,7 @@ div#header-space {
 body.home div#header-space {
 	display:none !important;
 }
-body a#toggle-nav {
+body header#top a#toggle-nav {
 	color: #999;
 	width: auto;
 }
