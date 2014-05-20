@@ -1,5 +1,5 @@
 jQuery(function($) {
-	
+	$('#header-outer').scrollUpMenu();
 
 	if ( $('#portfolio').size() > 0 ) {
 		$('#portfolio .element').each(function() {

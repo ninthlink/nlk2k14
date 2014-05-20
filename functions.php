@@ -3,7 +3,8 @@
 // and then?
 function nl2k14_js() {
 	if(!is_admin()) {
-		wp_enqueue_script( 'nlkjs', get_stylesheet_directory_uri() .'/js/nlk.js', array('jquery'), '0.1', true );
+		wp_register_script( 'jquery.scrollupmenu', get_stylesheet_directory_uri() .'/js/nlk.js', array('jquery'), '1.0', true );
+		wp_enqueue_script( 'nlkjs', get_stylesheet_directory_uri() .'/js/nlk.js', array('jquery', 'jquery.scrollupmenu'), '0.2', true );
 	}
 }
 add_action( 'wp_print_scripts', 'nl2k14_js' );
