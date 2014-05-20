@@ -12,10 +12,11 @@
 
 <?php } else { ?>
 	<meta name="viewport" content="width=1200" />
-<?php } ?>
-
+<?php }
+if ( is_front_page() ) {
+?>
 <meta name="long" content="Ninthlink is an award winning, full service San Diego web design, development and Internet marketing agency offering a wide range of creative, technological, and more importantly winning ROI solutions to both small and large businesses. Our mission is your long term success and providing the greatest value for your creative investment. It is our top priority to create a strategy that is highly effective for your organization.  Our results are, in every sense, your results. Whether your business is a new start-up or a large, established company, our experienced staff will work with you to create an affordable, professional web solution that meets all of your needs.">
-
+<?php } ?>
 <!--Shortcut icon-->
 <?php if(!empty($options['favicon'])) { ?>
 	<link rel="shortcut icon" href="<?php echo nectar_options_img($options['favicon']); ?>" />

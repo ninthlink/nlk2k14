@@ -380,3 +380,48 @@ div.container-wrap.std-blog-fullwidth article .post-header {
   	margin: -10px 10px 30px 0;
   }
 
+/* menu scroll cleanup */
+#mobile-menu {
+	margin-top: 0 !important
+}
+.container-wrap,
+.project-title,
+#full_width_portfolio {
+	margin-top: 0 !important;
+	padding-top: 0 !important;
+}
+body.page.contact .wpb_row.first-section {
+	margin-top: 0 !important
+}
+/* mobile 1st */
+#header-outer {
+	padding-top: 10px !important;
+	height: 58px;
+}
+.admin-bar #header-outer {
+	top: 32px !important;
+}
+#header-outer #mobile-menu {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 58px;
+}
+#header-outer #top {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+div#header-space {
+	display: block !important;
+	height: 58px !important;
+}
+@media only screen and (min-width: 1001px) {
+	#header-outer {
+		padding-top: 20px !important;
+		height: 98px;
+	}
+	div#header-space {
+		height: 98px !important;
+	}
+}
