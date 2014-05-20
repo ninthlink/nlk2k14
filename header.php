@@ -146,7 +146,7 @@ if($using_secondary == 'header_with_secondary') { ?>
 				
 				<div class="col span_9 col_last">
 					
-					<a href="#" id="toggle-nav"><i class="icon-reorder"></i></a>
+					<a href="#" id="toggle-nav">MENU <i class="icon-reorder"></i></a>
 					
 					<nav>
 						<ul class="sf-menu">	

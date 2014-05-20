@@ -419,6 +419,10 @@ div#header-space {
 body.home div#header-space {
 	display:none !important;
 }
+body a#toggle-nav {
+	color: #999;
+	width: auto;
+}
 @media only screen and (min-width: 1001px) {
 	#header-outer {
 		padding-top: 20px !important;
