@@ -396,8 +396,8 @@ body.page.contact .wpb_row.first-section {
 /* mobile 1st */
 #header-outer {
 	padding-top: 10px !important;
-	height: 52px;
-	min-height: 52px;
+	height: 58px;
+	min-height: 58px;
 }
 .admin-bar #header-outer {
 	top: 32px !important;
@@ -406,7 +406,7 @@ body.page.contact .wpb_row.first-section {
 	position: absolute;
 	width: 100%;
 	left: 0;
-	top: 52px;
+	top: 58px;
 }
 #header-outer #top {
 	position: absolute;
