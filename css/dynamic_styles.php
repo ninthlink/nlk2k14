@@ -142,7 +142,10 @@
 /* - - - - - Inputs and Forms - - - - - */
 	input[type="text"], input[type="tel"], input[type="email"], textarea {
 		background-color: transparent !important;
-		border: 2px solid #c8c8c8 !important;
+		border: none;
+		border-bottom: 2px solid #c8c8c8 !important;
+		box-shadow: none !important;
+		box-sizing: border-box;
 		font-size: 16px !important;
 		margin-bottom: 20px !important;
 		-webkit-transition: border .35s;
@@ -150,8 +153,25 @@
 	input[type="text"]:hover, input[type="tel"]:hover, input[type="email"]:hover, textarea:hover,
 	input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus, textarea:focus {
 		background-color: transparent !important;
-		border: 2px solid <?php echo $options['accent-color']; ?> !important;
+		border-color: <?php echo $options['accent-color']; ?> !important;
 	}
+	input[type="text"]:hover::-webkit-input-placeholder, input[type="tel"]:hover::-webkit-input-placeholder, input[type="email"]:hover::-webkit-input-placeholder, textarea:hover::-webkit-input-placeholder,
+	input[type="text"]:focus::-webkit-input-placeholder, input[type="tel"]:focus::-webkit-input-placeholder, input[type="email"]:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+		color: <?php echo $options['accent-color']; ?> !important;
+	}
+	input[type="text"]:hover:-moz-placeholder, input[type="tel"]:hover:-moz-placeholder, input[type="email"]:hover:-moz-placeholder, textarea:hover:-moz-placeholder,
+	input[type="text"]:focus:-moz-placeholder, input[type="tel"]:focus:-moz-placeholder, input[type="email"]:focus:-moz-placeholder, textarea:focus:-moz-placeholder {
+		color: <?php echo $options['accent-color']; ?> !important;
+	}
+	input[type="text"]:hover::-moz-placeholder, input[type="tel"]:hover::-moz-placeholder, input[type="email"]:hover::-moz-placeholder, textarea:hover::-moz-placeholder,
+	input[type="text"]:focus::-moz-placeholder, input[type="tel"]:focus::-moz-placeholder, input[type="email"]:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
+		color: <?php echo $options['accent-color']; ?> !important;
+	}
+	input[type="text"]:hover:-ms-input-placeholder, input[type="tel"]:hover:-ms-input-placeholder, input[type="email"]:hover:-ms-input-placeholder, textarea:hover:-ms-input-placeholder,
+	input[type="text"]:focus:-ms-input-placeholder, input[type="tel"]:focus:-ms-input-placeholder, input[type="email"]:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
+		color: <?php echo $options['accent-color']; ?> !important;
+	}
+
 	.wpcf7-list-item {
 		display: block;
 	}
