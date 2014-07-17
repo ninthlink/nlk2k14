@@ -1,0 +1,180 @@
+body.login div#login {
+  padding: 0;
+}
+body.login div#login h1 {
+  display: none;
+}
+div#nlk-logo-container {}
+div#nlk-logo-animated.large {
+  height: 310px;
+  margin: 20px auto;
+  position: relative;
+  width: 200px;
+}
+div#nlk-logo-animated.large div#l1 {
+  position: absolute;
+  top: 79px;
+  left: 0px;
+  width: 100px;
+  height: 86px;
+  background-color: darkorange;
+  -webkit-transform: rotate(90deg) skew(-30deg); 
+  -moz-transform: rotate(90deg) skew(-30deg);
+  transform: rotate(90deg) skew(-30deg);
+  -webkit-animation: l1 3s infinite; /* Chrome, Safari, Opera */
+  animation: l1 3s infinite;
+}
+div#nlk-logo-animated.large div#l2 {
+  position: absolute;
+  top: 0px;
+  left: 46px;
+  width: 100px;
+  height: 86px;
+  background-color: darkorange;
+  -webkit-transform: rotate(-30deg) skew(30deg); 
+  -moz-transform: rotate(-30deg) skew(30deg);
+  transform: rotate(-30deg) skew(30deg);
+  -webkit-animation: l2 3s infinite; /* Chrome, Safari, Opera */
+  animation: l2 3s infinite;
+}
+div#nlk-logo-animated.large div#l3 {
+  position: absolute;
+  top: 178px;
+  left: 98px;
+  width: 86px;
+  height: 100px;
+  background-color: darkorange;
+  -webkit-transform: skew(0deg, 150deg); 
+  -moz-transform: skew(0deg, 150deg);
+  transform: skew(0deg, 150deg);
+  -webkit-animation: l3 3s infinite; /* Chrome, Safari, Opera */
+  animation: l3 3s infinite;
+}
+div#nlk-logo-animated.large div#l4 {
+  position: absolute;
+  top: 72px;
+  left: 98px;
+  width: 86px;
+  height: 100px;
+  background-color: darkorange;
+  z-index: 9;
+  display: none;
+  -webkit-transform: skew(0deg, 150deg); 
+  -moz-transform: skew(0deg, 150deg);
+  transform: skew(0deg, 150deg);
+  -webkit-animation: l4 3s infinite; /* Chrome, Safari, Opera */
+  animation: l4 3s infinite;
+}
+div#nlk-logo-animated.large div#t1 {
+  position: absolute;
+  left: 108px;
+  top: 47px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 44px 76px 43px 0;
+  border-color: transparent orange transparent transparent;
+  -webkit-animation: t1 3s infinite; /* Chrome, Safari, Opera */
+  animation: t1 3s infinite;
+}
+div#nlk-logo-animated.large div#t2 {
+  position: absolute;
+  left: 98px;
+  top: 98px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 49px 0 50px 86px;
+  border-color: transparent transparent transparent orange;
+  -webkit-animation: t2 3s infinite; /* Chrome, Safari, Opera */
+  animation: t2 3s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes l1 {
+  0% {opacity: 0;}
+  8% {opacity: 1;}
+  65% {opacity: 1;}
+  70% {opacity: 0;}
+  100% {opacity: 0;}
+}
+/* Standard syntax */
+@keyframes l1 {
+  0% {opacity: 0;}
+  8% {opacity: 1;}
+  65% {opacity: 1;}
+  70% {opacity: 0;}
+  100% {opacity: 0;}
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes l2 {
+  0% {opacity: 0;}
+  6% {opacity: 0;}
+  14% {opacity: 1;}
+  70% {opacity: 1;}
+  75% {opacity: 0;}
+  100% {opacity: 0;}
+}
+/* Standard syntax */
+@keyframes l2 {
+  0% {opacity: 0;}
+  6% {opacity: 0;}
+  14% {opacity: 1;}
+  70% {opacity: 1;}
+  75% {opacity: 0;}
+  100% {opacity: 0;}
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes t1 {
+  0% {opacity: 0;}
+  12% {opacity: 0;}
+  20% {opacity: 1;}
+  75% {opacity: 1;}
+  80% {opacity: 0;}
+  100% {opacity: 0;}
+}
+/* Standard syntax */
+@keyframes t1 {
+  0% {opacity: 0;}
+  12% {opacity: 0;}
+  20% {opacity: 1;}
+  75% {opacity: 1;}
+  80% {opacity: 0;}
+  100% {opacity: 0;}
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes t2 {
+  0% {opacity: 0;}
+  18% {opacity: 0;}
+  26% {opacity: 1;}
+  80% {opacity: 1;}
+  85% {opacity: 0;}
+  100% {opacity: 0;}
+}
+/* Standard syntax */
+@keyframes t2 {
+  0% {opacity: 0;}
+  18% {opacity: 0;}
+  26% {opacity: 1;}
+  80% {opacity: 1;}
+  85% {opacity: 0;}
+  100% {opacity: 0;}
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes l3 {
+  0% {opacity: 0;}
+  24% {opacity: 0;}
+  32% {opacity: 1;}
+  85% {opacity: 1;}
+  90% {opacity: 0;}
+  100% {opacity: 0;}
+}
+/* Standard syntax */
+@keyframes l3 {
+  0% {opacity: 0;}
+  24% {opacity: 0;}
+  32% {opacity: 1;}
+  85% {opacity: 1;}
+  90% {opacity: 0;}
+  100% {opacity: 0;}
+}

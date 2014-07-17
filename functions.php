@@ -30,6 +30,34 @@ function nl2k14_styles() {
 add_action('wp_enqueue_scripts', 'nl2k14_styles');
 
 
+/**
+ * Login Page customizations
+ */
+add_action( 'login_head', 'nlk_custom_login_logo' );
+add_filter( 'login_message', 'nlk_custom_login_message' );
+add_filter( 'login_headertitle', 'nlk_custom_login_headertitle' );
+add_filter( 'login_headerurl', 'nlk_the_url' );
+
+function nlk_custom_login_logo() {
+	echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/css/custom-login.css" />';
+}
+function nlk_custom_login_message() {
+	return '<div id="nlk-logo-container"><div id="nlk-logo-animated" class="large"><div id="l1" class="l"></div><div id="l2" class="l"></div><div id="l3" class="l"></div><div id="l4" class="l"></div><div id="t1" class="l"></div><div id="t2" class="l"></div></div></div>';
+}
+function nlk_custom_login_headertitle() {
+	return 'Ninthlink, Inc.';
+}
+function nlk_the_url() {
+    return get_bloginfo( 'url' );
+}
+
+/**
+ * NLK Loader
+ */
+function nlk_custom_loader( $size = 'small' ) {
+	return '<div id="nlk-logo-container"><div id="nlk-logo-animated" class="' . $size . '"><div id="l1" class="l"></div><div id="l2" class="l"></div><div id="l3" class="l"></div><div id="l4" class="l"></div><div id="t1" class="l"></div><div id="t2" class="l"></div></div></div>';
+}
+
 function post_image_src() {
 	// get src of first image in post or featured image if any
 	if ( !$post_id )
