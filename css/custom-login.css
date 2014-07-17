@@ -93,88 +93,88 @@ div#nlk-logo-animated.large div#t2 {
 /* Chrome, Safari, Opera */
 @-webkit-keyframes l1 {
   0% {opacity: 0;}
-  8% {opacity: 1;}
-  65% {opacity: 1;}
-  70% {opacity: 0;}
+  3% {opacity: 1;}
+  35% {opacity: 1;}
+  83% {opacity: 0;}
   100% {opacity: 0;}
 }
 /* Standard syntax */
 @keyframes l1 {
   0% {opacity: 0;}
-  8% {opacity: 1;}
-  65% {opacity: 1;}
-  70% {opacity: 0;}
+  3% {opacity: 1;}
+  35% {opacity: 1;}
+  83% {opacity: 0;}
   100% {opacity: 0;}
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes l2 {
   0% {opacity: 0;}
-  6% {opacity: 0;}
-  14% {opacity: 1;}
-  70% {opacity: 1;}
-  75% {opacity: 0;}
+  2% {opacity: 0;}
+  5% {opacity: 1;}
+  39% {opacity: 1;}
+  85% {opacity: 0;}
   100% {opacity: 0;}
 }
 /* Standard syntax */
 @keyframes l2 {
   0% {opacity: 0;}
-  6% {opacity: 0;}
-  14% {opacity: 1;}
-  70% {opacity: 1;}
-  75% {opacity: 0;}
+  2% {opacity: 0;}
+  5% {opacity: 1;}
+  39% {opacity: 1;}
+  85% {opacity: 0;}
   100% {opacity: 0;}
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes t1 {
   0% {opacity: 0;}
-  12% {opacity: 0;}
-  20% {opacity: 1;}
-  75% {opacity: 1;}
-  80% {opacity: 0;}
+  4% {opacity: 0;}
+  7% {opacity: 1;}
+  43% {opacity: 1;}
+  87% {opacity: 0;}
   100% {opacity: 0;}
 }
 /* Standard syntax */
 @keyframes t1 {
   0% {opacity: 0;}
-  12% {opacity: 0;}
-  20% {opacity: 1;}
-  75% {opacity: 1;}
-  80% {opacity: 0;}
+  4% {opacity: 0;}
+  7% {opacity: 1;}
+  43% {opacity: 1;}
+  87% {opacity: 0;}
   100% {opacity: 0;}
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes t2 {
   0% {opacity: 0;}
-  18% {opacity: 0;}
-  26% {opacity: 1;}
-  80% {opacity: 1;}
-  85% {opacity: 0;}
+  6% {opacity: 0;}
+  9% {opacity: 1;}
+  47% {opacity: 1;}
+  89% {opacity: 0;}
   100% {opacity: 0;}
 }
 /* Standard syntax */
 @keyframes t2 {
   0% {opacity: 0;}
-  18% {opacity: 0;}
-  26% {opacity: 1;}
-  80% {opacity: 1;}
-  85% {opacity: 0;}
+  6% {opacity: 0;}
+  9% {opacity: 1;}
+  47% {opacity: 1;}
+  89% {opacity: 0;}
   100% {opacity: 0;}
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes l3 {
   0% {opacity: 0;}
-  24% {opacity: 0;}
-  32% {opacity: 1;}
-  85% {opacity: 1;}
-  90% {opacity: 0;}
+  8% {opacity: 0;}
+  11% {opacity: 1;}
+  51% {opacity: 1;}
+  91% {opacity: 0;}
   100% {opacity: 0;}
 }
 /* Standard syntax */
 @keyframes l3 {
   0% {opacity: 0;}
-  24% {opacity: 0;}
-  32% {opacity: 1;}
-  85% {opacity: 1;}
-  90% {opacity: 0;}
+  8% {opacity: 0;}
+  11% {opacity: 1;}
+  51% {opacity: 1;}
+  91% {opacity: 0;}
   100% {opacity: 0;}
 }
