@@ -106,3 +106,68 @@ function nl2k14_bodyclass($classes) {
 	if(is_page(5678)) $classes[] = 'contact';
 	return $classes;
 }
+
+function get_avatar_url($get_avatar){
+    preg_match("/src='(.*?)'/i", $get_avatar, $matches);
+    return $matches[1];
+}
+
+function nlk_logo_w_avatars( $bcolor = '#fff') {
+	$args = array(
+		'blog_id'      => $GLOBALS['blog_id'],
+		'role'         => 'administrator',
+		'orderby'      => 'login',
+		'order'        => 'ASC',
+		'count_total'  => false,
+		'fields'       => array('ID', 'display_name', 'user_email'),
+		);
+	$u = get_users( $args );
+	
+	foreach ( $u as $k => $v ) {
+		if( $u[$k]->ID == 1 ) {
+			unset( $u[$k] );
+		}
+		else {
+			$u[$k]->avatar = get_avatar( $v->ID, $size = '100', $default = null );
+		}
+	}
+	$i = 0;
+	$c = count($u);
+
+	$logo_html = '<div id="nlk-logo-static">
+			<div id="l1" class="l"></div>
+			<div id="l2" class="l"></div>
+			<div id="l3" class="l"></div>
+			<div id="l4" class="l"></div>
+			<div id="l5" class="l"></div>
+		</div>';
+	$logo_style = '<style> div#nlk-logo-static div { border-color: '. $bcolor .'; } </style>';
+	$logo_script = '<script type="text/javascript">
+		jQuery(function($){
+			var the_divs = [];
+				the_divs[0] = "#l1";
+				the_divs[1] = "#l2";
+				the_divs[2] = "#t1";
+				the_divs[3] = "#t1";
+				the_divs[4] = "#l3";
+			var avatars = [];'."\n";
+			foreach( $u as $k => $v ) {
+				$logo_script .= 'avatars['. $i .'] = "' . $u[$k]->avatar . '";'."\n";
+				$i++;
+			};
+			$logo_script .= '$(\'#nlk-logo-static div[id^="l"]\').hover(
+				function(){
+					var r = Math.floor(Math.random() * '. $c .');
+					if( $(this).find("img").length < 1 ) {
+						$(this).append( avatars[r] ).find("img").fadeIn( 500, function(){
+							$(this).delay(1000).fadeOut( 750, function(){
+								$(this).remove();
+							});
+						});
+					}
+				});
+		});
+		</script>';
+	print($logo_html);
+	print($logo_script);
+}

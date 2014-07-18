@@ -17,3 +17,17 @@ body.home #header-space { margin-bottom: 40px }
 
 /* for firefox */
 #footer-widgets .row .col img { width: 100%; }
+
+
+div#nlk-logo-static { position: relative; padding: 10px; margin: 20px; height: 300px; width: 300px; }
+div#nlk-logo-static div { overflow: hidden; border-width: 4px; border-style: solid; text-align: center; }
+div#nlk-logo-static div#l1 { position: absolute; border-width: 4px 6px 4px 4px; z-index: 5; top: 70px; left: 0px; width: 89px; height: 100px; background-color: darkorange; -webkit-transform: skew(0deg, 30deg);  -moz-transform: skew(0deg, 30deg); transform: skew(0deg, 30deg);}
+div#nlk-logo-static div#l2 { position: absolute; border-width: 4px 4px 6px 4px; z-index: 4; top: 0px; left: 37px; width: 100px; height: 90px; background-color: darkorange; -webkit-transform: rotate(-30deg) skew(30deg);  -moz-transform: rotate(-30deg) skew(30deg); transform: rotate(-30deg) skew(30deg);}
+div#nlk-logo-static div#l3 { position: absolute; z-index: 3; top: 171px; left: 85px; width: 89px; height: 100px; background-color: darkorange; -webkit-transform: skew(0deg, 150deg);  -moz-transform: skew(0deg, 150deg); transform: skew(0deg, 150deg);}
+div#nlk-logo-static div#l4 { position: absolute; z-index: 2; top: 102px; left: 37px; width: 100px; height: 89px; background-color: darkorange; -webkit-transform: rotate(-30deg) skew(30deg);  -moz-transform: rotate(-30deg) skew(30deg); transform: rotate(-30deg) skew(30deg);}
+div#nlk-logo-static div#l5 { position: absolute; border-width: 4px 4px 14px 4px;z-index: 1; top: 22px; left: 85px; width: 89px; height: 100px; background-color: darkorange; -webkit-transform: skew(0deg, 30deg);  -moz-transform: skew(0deg, 30deg); transform: skew(0deg, 30deg);}
+div#nlk-logo-static div img { display: none; }
+/*
+div#nlk-logo-static div#t1 { position: absolute; top: 47px; left: 101px; width: 0; height: 0; border-style: solid; border-width: 44px 76px 43px 0; border-color: transparent orange transparent transparent;}
+div#nlk-logo-static div#t2 { position: absolute; top: 98px; left: 91px; width: 0; height: 0; border-style: solid; border-width: 49px 0 50px 86px; border-color: transparent transparent transparent orange;}
+*/
