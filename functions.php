@@ -113,23 +113,38 @@ function get_avatar_url($get_avatar){
     return $matches[1];
 }
 
+function validate_gravatar( $email ) {
+	// Craft a potential url and test its headers
+	$hash = md5( $email );
+	$uri = 'http://www.gravatar.com/avatar/' . $hash . '?d=404';
+	$headers = @get_headers($uri);
+	if (!preg_match("|200|", $headers[0])) {
+		$has_valid_avatar = FALSE;
+	} else {
+		$has_valid_avatar = TRUE;
+	}
+	return $has_valid_avatar;
+}
+
 function nlk_logo_w_avatars( $bcolor = '#fff') {
 	$args = array(
-		'blog_id'      => $GLOBALS['blog_id'],
-		'role'         => 'administrator',
-		'orderby'      => 'login',
-		'order'        => 'ASC',
-		'count_total'  => false,
-		'fields'       => array('ID', 'display_name', 'user_email'),
+		'blog_id'		=> $GLOBALS['blog_id'],
+		//'role'		=> 'administrator',
+		'orderby'		=> 'login',
+		'order'			=> 'ASC',
+		'count_total'	=> false,
+		'fields'		=> array('ID', 'display_name', 'user_email'),
+		'who'			=> 'authors'
 		);
 	$u = get_users( $args );
 	
 	foreach ( $u as $k => $v ) {
-		if( $u[$k]->ID == 1 ) {
+		//if( $u[$k]->ID == 1 ) {
+		if( ! validate_gravatar( $u[$k]->user_email ) ) {
 			unset( $u[$k] );
 		}
 		else {
-			$u[$k]->avatar = get_avatar( $v->ID, $size = '100', $default = null );
+			$u[$k]->avatar = get_avatar( $v->ID, $size = '100', $default = 'none' );
 		}
 	}
 
