@@ -42,7 +42,8 @@ function nlk_custom_login_logo() {
 	echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/css/custom-login.css" />';
 }
 function nlk_custom_login_message() {
-	return '<div id="nlk-logo-container"><div id="nlk-logo-animated" class="large"><div id="l1" class="l"></div><div id="l2" class="l"></div><div id="l3" class="l"></div><div id="l4" class="l"></div><div id="t1" class="l"></div><div id="t2" class="l"></div></div></div>';
+	return nlk_logo_w_avatars( '#f1f1f1' );
+	//return '<div id="nlk-logo-container"><div id="nlk-logo-animated" class="large"><div id="l1" class="l"></div><div id="l2" class="l"></div><div id="l3" class="l"></div><div id="l4" class="l"></div><div id="t1" class="l"></div><div id="t2" class="l"></div></div></div>';
 }
 function nlk_custom_login_headertitle() {
 	return 'Ninthlink, Inc.';
@@ -131,43 +132,30 @@ function nlk_logo_w_avatars( $bcolor = '#fff') {
 			$u[$k]->avatar = get_avatar( $v->ID, $size = '100', $default = null );
 		}
 	}
-	$i = 0;
-	$c = count($u);
 
-	$logo_html = '<div id="nlk-logo-static">
+	// Register the script first.
+	wp_register_script( 'nlk_custom_logo', get_stylesheet_directory_uri() . '/js/custom-logo.js', '1.0', true );
+	// Now we can localize the script with our data.
+	wp_localize_script( 'nlk_custom_logo', 'logo_object', $u );
+	// The script can be enqueued now or later.
+	wp_enqueue_script( 'nlk_custom_logo' );
+
+	$the_logo = '<style>div#nlk-logo-avatars div { border-color: '. $bcolor .'; }
+	div#nlk-logo-avatars { height: 310px; margin: 20px auto; position: relative; width: 200px; }
+	div#nlk-logo-avatars div { overflow: hidden; box-sizing: border-box; border-width: 4px; border-style: solid; text-align: center; }
+	div#nlk-logo-avatars div#l1 { position: absolute; border-width: 4px 6px 4px 4px; z-index: 5; top: 70px; left: 0px; width: 89px; height: 100px; background-color: darkorange; -webkit-transform: skew(0deg, 30deg);  -moz-transform: skew(0deg, 30deg); transform: skew(0deg, 30deg);}
+	div#nlk-logo-avatars div#l2 { position: absolute; border-width: 4px 4px 6px 4px; z-index: 4; top: 0px; left: 37px; width: 100px; height: 90px; background-color: darkorange; -webkit-transform: rotate(-30deg) skew(30deg);  -moz-transform: rotate(-30deg) skew(30deg); transform: rotate(-30deg) skew(30deg);}
+	div#nlk-logo-avatars div#l5 { position: absolute; z-index: 3; top: 171px; left: 85px; width: 89px; height: 100px; background-color: darkorange; -webkit-transform: skew(0deg, 150deg);  -moz-transform: skew(0deg, 150deg); transform: skew(0deg, 150deg);}
+	div#nlk-logo-avatars div#l4 { position: absolute; z-index: 2; top: 102px; left: 37px; width: 100px; height: 89px; background-color: orange; -webkit-transform: rotate(-30deg) skew(30deg);  -moz-transform: rotate(-30deg) skew(30deg); transform: rotate(-30deg) skew(30deg);}
+	div#nlk-logo-avatars div#l3 { position: absolute; border-width: 4px 4px 14px 4px;z-index: 1; top: 22px; left: 85px; width: 89px; height: 100px; background-color: orange; -webkit-transform: skew(0deg, 30deg);  -moz-transform: skew(0deg, 30deg); transform: skew(0deg, 30deg);}
+	div#nlk-logo-avatars div img { display: none; margin-left: 50%; left: -50px; position: relative; } </style>
+		<div id="nlk-logo-avatars">
 			<div id="l1" class="l"></div>
 			<div id="l2" class="l"></div>
 			<div id="l3" class="l"></div>
 			<div id="l4" class="l"></div>
 			<div id="l5" class="l"></div>
 		</div>';
-	$logo_style = '<style> div#nlk-logo-static div { border-color: '. $bcolor .'; } </style>';
-	$logo_script = '<script type="text/javascript">
-		jQuery(function($){
-			var the_divs = [];
-				the_divs[0] = "#l1";
-				the_divs[1] = "#l2";
-				the_divs[2] = "#t1";
-				the_divs[3] = "#t1";
-				the_divs[4] = "#l3";
-			var avatars = [];'."\n";
-			foreach( $u as $k => $v ) {
-				$logo_script .= 'avatars['. $i .'] = "' . $u[$k]->avatar . '";'."\n";
-				$i++;
-			};
-			$logo_script .= '$(\'#nlk-logo-static div[id^="l"]\').hover(
-				function(){
-					var r = Math.floor(Math.random() * '. $c .');
-					if( $(this).find("img").length < 1 ) {
-						$(this).append( avatars[r] ).find("img").fadeIn( 500, function(){
-							$(this).delay(1000).fadeOut( 750, function(){
-								$(this).remove();
-							});
-						});
-					}
-				});
-		});
-		</script>';
-	print($logo_html);
-	print($logo_script);
+
+	return $the_logo;
 }
