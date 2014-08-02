@@ -3,7 +3,7 @@
 add_action( 'after_setup_theme', 'nl2k14_setup' );
 if ( ! function_exists( 'nl2k14_setup' ) ):
 function nl2k14_setup() {
-	// and
+	add_action('wp_head', 'nl2k14_touch_icons');
 	remove_action('wp_head', 'rsd_link');
 	remove_action('wp_head', 'wlwmanifest_link');
 	remove_action('wp_head', 'wp_generator');
@@ -23,13 +23,25 @@ function nl2k14_js() {
 }
 add_action( 'wp_print_scripts', 'nl2k14_js' );
 
-
 function nl2k14_styles() {	
 	 wp_enqueue_style("nlk", get_stylesheet_directory_uri() . "/css/dynamic_styles.php", array(), '1.3');
 }
 add_action('wp_enqueue_scripts', 'nl2k14_styles');
 
-
+function nl2k14_touch_icons() {
+	$img_url = get_stylesheet_directory_uri() .'/images/apple-touch-icon-';
+	$img_end = '-precomposed.png';
+	$sizes = array(57,76,120,152);
+	$scount = count($sizes);
+	while( $scount-- ) {
+		$s = $sizes[$scount];
+		$sx = '';
+		if ( $scount ) {
+			$sx = $s .'x'. $s;
+		}
+		echo '<link rel="apple-touch-icon-precomposed"'. ($sx == '' ? '' : ' sizes="'. $sx .'"') .' href="'. $img_url . ( $sx != '' ? '-'. $sx : '' ) . $img_end .'">' ."\n";
+	}
+}
 /**
  * Login Page customizations
  */
