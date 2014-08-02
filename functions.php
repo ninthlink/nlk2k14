@@ -29,7 +29,7 @@ function nl2k14_styles() {
 add_action('wp_enqueue_scripts', 'nl2k14_styles');
 
 function nl2k14_touch_icons() {
-	$img_url = get_stylesheet_directory_uri() .'/images/apple-touch-icon-';
+	$img_url = get_stylesheet_directory_uri() .'/images/apple-touch-icon';
 	$img_end = '-precomposed.png';
 	$sizes = array(57,76,120,152);
 	$scount = count($sizes);
