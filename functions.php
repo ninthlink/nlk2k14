@@ -54,7 +54,7 @@ function nlk_custom_login_logo() {
 	echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/css/custom-login.css" />';
 }
 function nlk_custom_login_message() {
-	return nlk_logo_w_avatars( '#f1f1f1' );
+	return nlk_logo_w_avatars_3d( '#f1f1f1' );
 	//return '<div id="nlk-logo-container"><div id="nlk-logo-animated" class="large"><div id="l1" class="l"></div><div id="l2" class="l"></div><div id="l3" class="l"></div><div id="l4" class="l"></div><div id="t1" class="l"></div><div id="t2" class="l"></div></div></div>';
 }
 function nlk_custom_login_headertitle() {
@@ -119,12 +119,13 @@ function nl2k14_bodyclass($classes) {
 	if(is_page(5678)) $classes[] = 'contact';
 	return $classes;
 }
-
+if ( !function_exists( 'get_avatar_url' ) ) {
 function get_avatar_url($get_avatar){
     preg_match("/src='(.*?)'/i", $get_avatar, $matches);
     return $matches[1];
 }
-
+}
+if ( !function_exists( 'validate_gravatar' ) ) {
 function validate_gravatar( $email ) {
 	// Craft a potential url and test its headers
 	$hash = md5( $email );
@@ -137,7 +138,7 @@ function validate_gravatar( $email ) {
 	}
 	return $has_valid_avatar;
 }
-
+}
 function nlk_logo_w_avatars( $bcolor = '#fff') {
 	$args = array(
 		'blog_id'		=> $GLOBALS['blog_id'],
@@ -178,6 +179,50 @@ function nlk_logo_w_avatars( $bcolor = '#fff') {
 	div#nlk-logo-avatars div img { display: none; margin-left: 50%; left: -50px; position: relative; } </style>
 		<div id="nlk-logo-avatars">
 			<div id="l1" class="l"></div>
+			<div id="l2" class="l"></div>
+			<div id="l3" class="l"></div>
+			<div id="l4" class="l"></div>
+			<div id="l5" class="l"></div>
+		</div>';
+
+	return $the_logo;
+}
+function nlk_logo_w_avatars_3d() {
+	$args = array(
+		'blog_id'		=> $GLOBALS['blog_id'],
+		//'role'		=> 'administrator',
+		'orderby'		=> 'login',
+		'order'			=> 'ASC',
+		'count_total'	=> false,
+		'fields'		=> array('ID', 'display_name', 'user_email'),
+		'who'			=> 'authors'
+		);
+	$u = get_users( $args );
+	
+	foreach ( $u as $k => $v ) {
+		//if( $u[$k]->ID == 1 ) {
+		if( ! validate_gravatar( $u[$k]->user_email ) ) {
+			unset( $u[$k] );
+		}
+		else {
+			$u[$k]->avatar = get_avatar( $v->ID, $size = '100', $default = 'none' );
+		}
+	}
+
+	// Register the script first.
+	wp_register_script( 'nlk_custom_logo', get_stylesheet_directory_uri() . '/js/custom-logo.js', '1.0', true );
+	// Now we can localize the script with our data.
+	wp_localize_script( 'nlk_custom_logo', 'logo_object', $u );
+	// The script can be enqueued now or later.
+	wp_enqueue_script( 'nlk_custom_logo' );
+
+	$the_logo = 
+	'	<div id="nlk-logo-avatars" class="l3_spective">
+			<div id="l1" class="l">
+				<p id="wordmark">
+					<em>n<i>i</i><i>n</i></em><em>t<i>h</i><i>l</i></em><em>i<i>n</i><i>k</i></em>		
+				</p>
+			</div>
 			<div id="l2" class="l"></div>
 			<div id="l3" class="l"></div>
 			<div id="l4" class="l"></div>
