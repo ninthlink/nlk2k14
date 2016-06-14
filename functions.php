@@ -17,6 +17,15 @@ endif;
 // and then?
 function nl2k14_js() {
 	if(!is_admin()) {
+		// get rid of salient modernizer because who cares anymore?
+		wp_deregister_script( 'modernizer' );
+		// try moving jquery to the footer this way?
+		wp_dequeue_script( 'jquery' );
+		wp_deregister_script( 'jquery' );
+		wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
+		wp_enqueue_script( 'jquery' );
+		
+		// add some more js too
 		wp_register_script( 'scrollupforwhat', get_stylesheet_directory_uri() .'/js/jquery.scrollupforwhat.min.js', array('jquery'), '1.2', true );
 		wp_enqueue_script( 'nlkjs', get_stylesheet_directory_uri() .'/js/nlk.js', array('jquery', 'scrollupforwhat'), '0.2', true );
 	}
