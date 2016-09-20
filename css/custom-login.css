@@ -1,3 +1,4 @@
+body.login{ padding-top:1px; }
 body.login div#login {
   padding: 0;
 }
@@ -89,6 +90,62 @@ div#nlk-logo-animated.large div#t2 {
   -webkit-animation: t2 3s infinite; /* Chrome, Safari, Opera */
   animation: t2 3s infinite;
 }
+/* 3d logo */
+body.login{padding-top:1px;}
+#wordmark {
+  color:#f1f1f1;
+  opacity: 0;
+  transition:opacity 1s linear;
+  font-size:7.518em;
+  position:absolute;
+  top: 50%; left: 50%;
+  font-family:sans-serif;
+  line-height: 1;
+  letter-spacing: .55em;
+  text-align:center;
+  transform:translate(-50%,-50%);
+  width: 300px; height:300px;
+  overflow: hidden;
+  font-variant: small-caps;
+}
+#wordmark em:not(:first-child):before{content:"\A";white-space:pre;}
+#wordmark em{ font-style:normal; position: relative;}
+#wordmark i{ font-style:normal;}
+#wordmark em:nth-child(1) {left:.2em;}
+#wordmark em:nth-child(2) {left:.15em;}
+#wordmark em:nth-child(3) {left:.25em;}
+#login{
+  perspective:1300px;
+  perspective-origin:50% 23%; }
+#nlk-logo-avatars {
+  width:300px; height:300px;
+  margin: 50px auto; position: relative;
+  transform-style: preserve-3d;
+  transition:transform .55s ease-out;
+}
+#nlk-logo-avatars .l {
+  width:300px; height:300px;
+  overflow: hidden;
+  background-color: #f1931c;
+  padding:6px;
+  background-clip:content-box;
+  box-sizing: border-box;
+  text-align: center;
+}
+#nlk-logo-avatars.logospective{ transform: translateZ( -2100px ) translateY(-80px) rotateX(-36deg) rotateY(-45deg);}
+#nlk-logo-avatars.l3_spective{ transform: translateZ( -13px ) translateY(11px) rotateX(0deg) rotateY(-90deg);}
+
+/* front */ #l1 { position: absolute; transform: rotateY(0deg) translateZ(150px);}
+/* back */ #l2 { position: absolute; transform: rotateX(180deg) translateZ(150px); height:68.18% !important;}
+/* right */ #l3 { position: absolute; transform: rotateY(90deg) translateZ(150px) translateY(300px);}
+/* top */ #l4 { position: absolute; transform: rotateX(90deg) translateZ(150px);}
+/* bottom */ #l5 { position: absolute; transform: rotateX(-90deg) translateZ(150px);}
+
+#nlk-logo-avatars div img { display: none; position: relative; width:300px; height:auto; }
+#l5 img, #l5 #wordmark{transform:scaleY(-1); left:0; top:0;}
+#l2 img, #l2 #wordmark{transform:scaleY(-1); left:0; top:auto; bottom:0;}
+
+
 
 /* Chrome, Safari, Opera */
 @-webkit-keyframes l1 {

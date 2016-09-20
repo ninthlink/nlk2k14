@@ -4,7 +4,8 @@ jQuery(function($){
 
 	var last_rand_avatar = null,
 		last_rand_div = null,
-		avatars = [];
+		avatars = [],
+		bd = $('body'); 
 
 	function get_rand( obj, last_rand, start ) {
 		start = typeof start !== 'undefined' ? start : 0;
@@ -27,8 +28,19 @@ jQuery(function($){
 	}
 
 
-	console.log(logo_object);
+	// console.log(logo_object);
 
+	//put the wordmark on a random face
+	$('#wordmark')
+    	.detach()
+    	.appendTo('#l'+Math.ceil(Math.random() * 5))
+    	.css('opacity','1');
+    //orient the 3d box around cursor
+	bd.mousemove(function(e){
+		var perspectX = e.pageX / bd.width();
+		var perspectY = e.pageY / bd.height();
+		$('#nlk-logo-avatars')[0].style.transform = 'translateZ( -2100px ) translateX('+(-.5+perspectX)*300+'px) translateY('+(-80 + 300*(-.5+perspectY))+'px) rotateX(-'+(36 + perspectY*11)+'deg) rotateY(' + (-45 + (.21 * (-180 + (perspectX * 360)))) + 'deg)';
+	});
 	
 
 	$('#nlk-logo-avatars div.l').hover(function(){
