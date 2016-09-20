@@ -10,7 +10,7 @@ function nl2k14_setup() {
 	remove_action('wp_head', 'start_post_rel_link');
 	remove_action('wp_head', 'index_rel_link');
 	remove_action('wp_head', 'adjacent_posts_rel_link');
-	
+
 	add_filter('body_class','nl2k14_bodyclass');
 }
 endif;
@@ -24,7 +24,7 @@ function nl2k14_js() {
 		wp_deregister_script( 'jquery' );
 		wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
 		wp_enqueue_script( 'jquery' );
-		
+
 		// add some more js too
 		wp_register_script( 'scrollupforwhat', get_stylesheet_directory_uri() .'/js/jquery.scrollupforwhat.min.js', array('jquery'), '1.2', true );
 		wp_enqueue_script( 'nlkjs', get_stylesheet_directory_uri() .'/js/nlk.js', array('jquery', 'scrollupforwhat'), '0.2', true );
@@ -32,7 +32,13 @@ function nl2k14_js() {
 }
 add_action( 'wp_print_scripts', 'nl2k14_js' );
 
-function nl2k14_styles() {	
+function nl2k14_styles() {
+	// "main-styles" enqueue is not quite set up for child themes, so
+	wp_deregister_style( 'main-styles' );
+	wp_enqueue_style( 'salient-main', get_template_directory_uri() .'/style.css', array(), '7.5' );
+	wp_enqueue_style( 'nl2k', get_stylesheet_directory_uri() .'/style.css', array('salient-main'), '7.5' );
+
+	// what is "dynamic styles?"
 	 wp_enqueue_style("nlk", get_stylesheet_directory_uri() . "/css/dynamic_styles.php", array(), '1.3');
 }
 add_action('wp_enqueue_scripts', 'nl2k14_styles');
@@ -111,7 +117,7 @@ function google_tag_manager_container() {
 	})(window,document,'script','dataLayer','GTM-TVJ3T8');</script>
 	<!-- End Google Tag Manager -->
 GTM;
-	
+
 	echo $str;
 }
 
@@ -159,7 +165,7 @@ function nlk_logo_w_avatars( $bcolor = '#fff') {
 		'who'			=> 'authors'
 		);
 	$u = get_users( $args );
-	
+
 	foreach ( $u as $k => $v ) {
 		//if( $u[$k]->ID == 1 ) {
 		if( ! validate_gravatar( $u[$k]->user_email ) ) {
@@ -207,7 +213,7 @@ function nlk_logo_w_avatars_3d() {
 		'who'			=> 'authors'
 		);
 	$u = get_users( $args );
-	
+
 	foreach ( $u as $k => $v ) {
 		//if( $u[$k]->ID == 1 ) {
 		if( ! validate_gravatar( $u[$k]->user_email ) ) {
@@ -225,11 +231,11 @@ function nlk_logo_w_avatars_3d() {
 	// The script can be enqueued now or later.
 	wp_enqueue_script( 'nlk_custom_logo' );
 
-	$the_logo = 
+	$the_logo =
 	'	<div id="nlk-logo-avatars" class="l3_spective">
 			<div id="l1" class="l">
 				<p id="wordmark">
-					<em>n<i>i</i><i>n</i></em><em>t<i>h</i><i>l</i></em><em>i<i>n</i><i>k</i></em>		
+					<em>n<i>i</i><i>n</i></em><em>t<i>h</i><i>l</i></em><em>i<i>n</i><i>k</i></em>
 				</p>
 			</div>
 			<div id="l2" class="l"></div>

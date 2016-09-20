@@ -8,7 +8,7 @@ Template: salient
 Version: 2016.9.20
 */
 
-@import '../salient/style.css';
+/* @import '../salient/style.css'; */
 
 /* more styles here? */
 body.home #header-space { margin-bottom: 40px }
