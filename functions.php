@@ -4,17 +4,11 @@ add_action( 'after_setup_theme', 'nl2k14_setup' );
 if ( ! function_exists( 'nl2k14_setup' ) ):
 function nl2k14_setup() {
 	add_action('wp_head', 'nl2k14_touch_icons');
-	remove_action('wp_head', 'rsd_link');
-	remove_action('wp_head', 'wlwmanifest_link');
-	remove_action('wp_head', 'wp_generator');
-	remove_action('wp_head', 'start_post_rel_link');
-	remove_action('wp_head', 'index_rel_link');
-	remove_action('wp_head', 'adjacent_posts_rel_link');
-
 	add_filter('body_class','nl2k14_bodyclass');
 }
 endif;
 // and then?
+add_action( 'wp_print_scripts', 'nl2k14_js' );
 function nl2k14_js() {
 	if(!is_admin()) {
 		// get rid of salient modernizer because who cares anymore?
@@ -26,12 +20,12 @@ function nl2k14_js() {
 		wp_enqueue_script( 'jquery' );
 
 		// add some more js too
-		wp_register_script( 'scrollupforwhat', get_stylesheet_directory_uri() .'/js/jquery.scrollupforwhat.min.js', array('jquery'), '1.2', true );
-		wp_enqueue_script( 'nlkjs', get_stylesheet_directory_uri() .'/js/nlk.js', array('jquery', 'scrollupforwhat'), '0.2', true );
+		//wp_register_script( 'scrollupforwhat', get_stylesheet_directory_uri() .'/js/jquery.scrollupforwhat.min.js', array('jquery'), '1.2', true );
+		//wp_enqueue_script( 'nlkjs', get_stylesheet_directory_uri() .'/js/nlk.js', array('jquery', 'scrollupforwhat'), '0.2', true );
 	}
 }
-add_action( 'wp_print_scripts', 'nl2k14_js' );
 
+add_action('wp_enqueue_scripts', 'nl2k14_styles');
 function nl2k14_styles() {
 	// "main-styles" enqueue is not quite set up for child themes, so
 	wp_deregister_style( 'main-styles' );
@@ -41,7 +35,22 @@ function nl2k14_styles() {
 	// what is "dynamic styles?"
 	 wp_enqueue_style("nlk", get_stylesheet_directory_uri() . "/css/dynamic_styles.php", array(), '1.3');
 }
-add_action('wp_enqueue_scripts', 'nl2k14_styles');
+
+add_action( 'wp_footer', 'nl2k14_pchk' );
+function nl2k14_pchk() {
+	if ( is_singular( 'portfolio' ) ) {
+		// inline from nlk.js..
+		?>
+<script type="text/javascript">
+jQuery(function($){
+	if ( $('body').hasClass('single-portfolio') ) {
+		$('.sf-menu li:first, #mobile-menu li:first').addClass('current-menu-item');
+	}
+});
+</script>
+		<?php
+	}
+}
 
 function nl2k14_touch_icons() {
 	$img_url = get_stylesheet_directory_uri() .'/images/apple-touch-icon';
