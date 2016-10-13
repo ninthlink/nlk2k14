@@ -36,7 +36,7 @@ function nl2k14_styles() {
 	 wp_enqueue_style("nlk", get_stylesheet_directory_uri() . "/css/dynamic_styles.php", array(), '1.3');
 }
 
-add_action( 'wp_footer', 'nl2k14_pchk' );
+add_action( 'wp_footer', 'nl2k14_pchk', 99 );
 function nl2k14_pchk() {
 	if ( is_singular( 'portfolio' ) ) {
 		// inline from nlk.js..
