@@ -5,6 +5,11 @@ if ( ! function_exists( 'nl2k14_setup' ) ):
 function nl2k14_setup() {
 	add_action('wp_head', 'nl2k14_touch_icons', 11);
 	add_filter('body_class','nl2k14_bodyclass');
+	
+	// come on duplicate-post plugin youre better than that
+	if ( !is_admin() && !is_admin_bar_showing() ) {
+	  remove_action( 'wp_enqueue_scripts', 'duplicate_post_add_css');
+	}
 }
 endif;
 // and then?
