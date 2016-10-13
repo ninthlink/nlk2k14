@@ -30,20 +30,20 @@ if ( is_front_page() ) {
 </head>
 
 <?php
- global $post; 
+ global $post;
 
  if(is_home() || is_archive()){
 	$header_title = get_post_meta(get_option('page_for_posts'), '_nectar_header_title', true);
-	$header_bg = get_post_meta(get_option('page_for_posts'), '_nectar_header_bg', true); 
+	$header_bg = get_post_meta(get_option('page_for_posts'), '_nectar_header_bg', true);
 }  else {
 	$header_title = get_post_meta($post->ID, '_nectar_header_title', true);
-	$header_bg = get_post_meta($post->ID, '_nectar_header_bg', true); 
+	$header_bg = get_post_meta($post->ID, '_nectar_header_bg', true);
 }
 
 //check if parallax nectar slider is being used
 $parallax_nectar_slider = using_nectar_slider();
 
-$logo_class = (!empty($options['use-logo']) && $options['use-logo'] == '1') ? null : 'class="no-image"'; 
+$logo_class = (!empty($options['use-logo']) && $options['use-logo'] == '1') ? null : 'class="no-image"';
 
 ?>
 
@@ -53,7 +53,7 @@ $logo_class = (!empty($options['use-logo']) && $options['use-logo'] == '1') ? nu
 
 <?php if(!empty($options['boxed_layout']) && $options['boxed_layout'] == '1') { echo '<div id="boxed">'; } ?>
 
-<?php $using_secondary = (!empty($options['header_layout'])) ? $options['header_layout'] : ' '; 
+<?php $using_secondary = (!empty($options['header_layout'])) ? $options['header_layout'] : ' ';
 
 if($using_secondary == 'header_with_secondary') { ?>
 
@@ -79,13 +79,13 @@ if($using_secondary == 'header_with_secondary') { ?>
 						<?php  if(!empty($options['use-soundcloud-icon-header']) && $options['use-soundcloud-icon-header'] == 1) { ?> <li><a target="_blank" href="<?php echo $options['soundcloud-url']; ?>"><i class="icon-soundcloud"></i></a></li> <?php } ?>
 					</ul>
 				<?php } ?>
-				
+
 				<?php if(has_nav_menu('secondary_nav')) { ?>
-					<ul class="sf-menu">	
+					<ul class="sf-menu">
 				   	   <?php wp_nav_menu( array('walker' => new Nectar_Arrow_Walker_Nav_Menu, 'theme_location' => 'secondary_nav', 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
 				    </ul>
 				<?php }	?>
-				
+
 			</nav>
 		</div>
 	</div>
@@ -94,65 +94,65 @@ if($using_secondary == 'header_with_secondary') { ?>
 
 <div id="header-space"></div>
 
-<?php 
+<?php
 	// header transparent option
 	$transparency_markup = null;
 	$activate_transparency = null;
-	
+
 	if(!empty($options['transparent-header']) && $options['transparent-header'] == '1') {
-		
+
 		$starting_color = (empty($options['header-starting-color'])) ? '#ffffff' : $options['header-starting-color'];
 		$activate_transparency = using_page_header($post->ID);
-		
+
 		$transparency_markup = ($activate_transparency == 'true') ? 'data-transparent-header="true" class="transparent"' : null ;
 	}
-	
+
 ?>
 
 <div id="header-outer" <?php echo $transparency_markup; ?> data-full-width="<?php echo (!empty($options['header-fullwidth']) && $options['header-fullwidth'] == '1') ? 'true' : 'false' ; ?>" data-using-secondary="<?php echo ($using_secondary == 'header_with_secondary') ? '1' : '0'; ?>" data-using-logo="<?php if(!empty($options['use-logo'])) echo $options['use-logo']; ?>" data-logo-height="<?php if(!empty($options['logo-height'])) echo $options['logo-height']; ?>" data-padding="<?php echo (!empty($options['header-padding'])) ? $options['header-padding'] : "28"; ?>" data-header-resize="<?php if(!empty($options['header-resize-on-scroll'])) echo $options['header-resize-on-scroll']; ?>">
-	
+
 	<?php get_template_part('includes/header-search'); ?>
-	
+
 	<header id="top">
-		
+
 		<div class="container">
-			
+
 			<div class="row">
-				  
+
 				<div class="col span_3">
-					
+
 					<a id="logo" href="<?php echo home_url(); ?>" <?php echo $logo_class; ?>>
-						
+
 						<?php if(!empty($options['use-logo'])) {
-							
+
 								$default_logo_class = (!empty($options['retina-logo'])) ? 'default-logo' : null;
-								
+
 								 echo '<img class="'.$default_logo_class.'" alt="'. get_bloginfo('name') .'" src="' . nectar_options_img($options['logo']) . '" />';
-								 
+
 								 if(!empty($options['retina-logo'])) echo '<img class="retina-logo" alt="'. get_bloginfo('name') .'" src="' . nectar_options_img($options['retina-logo']) . '" />';
-							 	 
-								 //starting logo 
+
+								 //starting logo
 								 if($activate_transparency == 'true'){
-								 	
+
 								 	 if(!empty($options['header-starting-logo'])) echo '<img class="starting-logo '.$default_logo_class.'"  alt="'. get_bloginfo('name') .'" src="' . nectar_options_img($options['header-starting-logo']) . '" />';
 									 if(!empty($options['header-starting-retina-logo'])) echo '<img class="retina-logo starting-logo" alt="'. get_bloginfo('name') .'" src="' . nectar_options_img($options['header-starting-retina-logo']) . '" />';
-									 
+
 								 }
-								 
-							 } else { echo get_bloginfo('name'); } ?> 
+
+							 } else { echo get_bloginfo('name'); } ?>
 					</a>
 
 				</div><!--/span_3-->
-				
+
 				<div class="col span_9 col_last">
-					
+
 					<a href="#" id="toggle-nav">MENU <i class="icon-reorder"></i></a>
-					
+
 					<nav>
-						<ul class="sf-menu">	
-							<?php 
+						<ul class="sf-menu">
+							<?php
 							if(has_nav_menu('top_nav')) {
-							    wp_nav_menu( array('walker' => new Nectar_Arrow_Walker_Nav_Menu, 'theme_location' => 'top_nav', 'container' => '', 'items_wrap' => '%3$s' ) ); 
+							    wp_nav_menu( array('walker' => new Nectar_Arrow_Walker_Nav_Menu, 'theme_location' => 'top_nav', 'container' => '', 'items_wrap' => '%3$s' ) );
 							}
 							else {
 								echo '<li><a href="">No menu assigned!</a></li>';
@@ -164,42 +164,40 @@ if($using_secondary == 'header_with_secondary') { ?>
 							<?php  if(!empty($options['use-instagram-icon']) && $options['use-instagram-icon'] == 1) { ?> <li><a target="_blank" href="<?php echo $options['instagram-url']; ?>"><i class="icon-instagram"></i></a></li> <?php } ?>
 						</ul>
 					</nav>
-					
+
 				</div><!--/span_9-->
-			
+
 			</div><!--/row-->
-			
+
 		</div><!--/container-->
-		
+
 	</header>
-	
+
 	<?php
-   
+
    $using_fw_slider = using_nectar_slider();
    $using_fw_slider = (!empty($options['transparent-header']) && $options['transparent-header'] == '1') ? $using_fw_slider : 0;
-   
+
    if($using_fw_slider) echo '<div class="ns-loading-cover"></div>';
-   
-   ?>		
-	
+
+   ?>
+
+	<div id="mobile-menu">
+
+		<div class="container">
+			<ul>
+				<?php
+					if(has_nav_menu('top_nav')) {
+
+					    wp_nav_menu( array('theme_location' => 'top_nav', 'menu' => 'Top Navigation Menu', 'container' => '', 'items_wrap' => '%3$s' ) );
+					}
+					else {
+						echo '<li><a href="">No menu assigned!</a></li>';
+					}
+				?>
+			</ul>
+		</div>
+
+	</div>
 
 </div><!--/header-outer-->
-
-
-<div id="mobile-menu">
-	
-	<div class="container">
-		<ul>
-			<?php 
-				if(has_nav_menu('top_nav')) {
-					
-				    wp_nav_menu( array('theme_location' => 'top_nav', 'menu' => 'Top Navigation Menu', 'container' => '', 'items_wrap' => '%3$s' ) );
-				}
-				else {
-					echo '<li><a href="">No menu assigned!</a></li>';
-				}
-			?>		
-		</ul>
-	</div>
-	
-</div>
