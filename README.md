@@ -1,5 +1,5 @@
 # NL2K14
-WordPress theme for http://www.ninthlink.com currently as a Child Theme of Salient
+WordPress theme for http://www.ninthlink.com currently as a Child Theme of [Salient](http://www.salienttheme.com/)
 
 Currently working with Salient 7.5.02?
 
