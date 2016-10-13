@@ -24,5 +24,5 @@ Currently, **production** branch is set to deploy automatically through DeployBo
 
 [![Deployment status from DeployBot](https://nlk.deploybot.com/badge/56046447893432/87413.svg)](https://nlk.deploybot.com/96836/environments/87413)
 
-From there, [use the Pantheon workflow](https://pantheon.io/docs/pantheon-workflow/) to migrate changes up to TST and Production http://www.ninthlink.com/
+From there, [use the Pantheon workflow](https://pantheon.io/docs/pantheon-workflow/) to migrate changes up to TEST and on to Production http://www.ninthlink.com
 
