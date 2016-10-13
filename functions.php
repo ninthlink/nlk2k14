@@ -3,15 +3,8 @@
 add_action( 'after_setup_theme', 'nl2k14_setup' );
 if ( ! function_exists( 'nl2k14_setup' ) ):
 function nl2k14_setup() {
-	add_action('wp_head', 'nl2k14_touch_icons');
+	add_action('wp_head', 'nl2k14_touch_icons', 11);
 	add_filter('body_class','nl2k14_bodyclass');
-
-	// remove js_composer meta
-	global $vc_manager;
-	remove_action( 'wp_head', array(
-		$vc_manager->vc(),
-		'addMetaData',
-	) );
 }
 endif;
 // and then?
@@ -78,6 +71,17 @@ function nl2k14_touch_icons() {
 		}
 		echo '<link rel="apple-touch-icon-precomposed"'. ($sx == '' ? '' : ' sizes="'. $sx .'"') .' href="'. $img_url . ( $sx != '' ? '-'. $sx : '' ) . $img_end .'">' ."\n";
 	}
+
+}
+
+add_action( 'vc_after_init_base', 'nl2k14_no_js_comp_meta' );
+function nl2k14_no_js_comp_meta() {
+	// and while we're here, try and remove js_composer meta
+	global $vc_manager;
+	remove_action( 'wp_head', array(
+		$vc_manager->vc(),
+		'addMetaData',
+	) );
 }
 /**
  * Login Page customizations
