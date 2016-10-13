@@ -5,6 +5,13 @@ if ( ! function_exists( 'nl2k14_setup' ) ):
 function nl2k14_setup() {
 	add_action('wp_head', 'nl2k14_touch_icons');
 	add_filter('body_class','nl2k14_bodyclass');
+
+	// remove js_composer meta
+	global $vc_manager;
+	remove_action( 'wp_head', array(
+		$vc_manager->vc(),
+		'addMetaData',
+	) );
 }
 endif;
 // and then?
