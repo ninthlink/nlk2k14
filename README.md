@@ -3,14 +3,26 @@ WordPress theme for http://www.ninthlink.com currently as a Child Theme of Salie
 
 Tested up to Salient 7.5.2, or something
 
-### versioning
+### Theme Versioning
 
-lets just say, whatever date you are editing something, set the style.css to that? maybe?
+Lets just say, whatever date you are editing something, set the Version in the top of the main [style.css](https://github.com/ninthlink/nlk2k14/blob/master/style.css) to that? Maybe?
 
-### branching
+```
+/*
+Theme Name: NL2K14
+...
+Template: salient
+Version: 2016.10.12
+*/
+````
 
-Feature branching should branch off of master
+### Branching and Deployment
 
-Currently, production branch is set to deploy (automatically?) to live http://www.ninthlink.com
+Feature branching should branch off of **master**
 
-and then?
+Currently, **production** branch is set to deploy automatically through DeployBot to ~~live~~ the new Pantheon dev site, which should work as long as that Pantheon dev site is in SFTP mode.
+
+[![Deployment status from DeployBot](https://nlk.deploybot.com/badge/56046447893432/87413.svg)](https://nlk.deploybot.com/96836/environments/87413)
+
+From there, [use the Pantheon workflow](https://pantheon.io/docs/pantheon-workflow/) to migrate changes up to TST and Production http://www.ninthlink.com/
+
